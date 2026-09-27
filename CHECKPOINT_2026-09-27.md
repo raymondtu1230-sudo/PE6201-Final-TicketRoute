@@ -40,3 +40,11 @@ Terminal startup with the supplied launcher, explains hidden key entry and
 precise completion/error handling, and includes Windows commands. The proposed
 cloud alternative was not published or run. Program source and classifier
 configuration remain the previously verified version.
+
+Budget update: user reports approximately US$8 remaining. A new cost-check
+launcher uses a US$0.10 cumulative program stop and validation-only execution.
+A separate continuation launcher explicitly uses US$7 cumulative, retaining
+probe charges and cached predictions. Actual affordability remains unverified
+until the user's cost-check results arrive. These launchers preserve the frozen
+classifier, original 100-row evidence and official evaluation design. No new
+real API calls were made here.

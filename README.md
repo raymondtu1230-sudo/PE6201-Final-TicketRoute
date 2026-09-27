@@ -19,6 +19,20 @@ offline tests and recomputed the baselines. Full validation and final LLM test
 require the course OpenRouter key. The working UI supports honest historical
 replay, a keyword mode and a separately labelled live mode.
 
+## Budget-first execution for the reported US$8 balance
+
+Use `CHECK_COST_MAC.command` in the existing project folder first. It explicitly
+sets `--stage validation --budget-usd 0.10` on the existing runner. The US$0.05
+per-request reserve normally stops this small probe near US$0.05 recorded spend.
+A spending-cap stop is expected; retain and review `TicketRoute_Results.zip`.
+This is a local software guard, not a provider/account guarantee.
+
+After reviewing actual charges and caching, `CONTINUE_WITH_7USD_MAC.command`
+resumes with a US$7 cumulative evaluation stop, including the probe spend.
+Do not reset the results directory or use the legacy US$12 launcher under this
+balance constraint. Completing all 4,976 new calls within US$8 is not guaranteed.
+No model, prompt, dataset split or target metric is changed by these launchers.
+
 ## Quick start
 
 Python **3.10 or newer** is the only runtime requirement. No pip packages, model
