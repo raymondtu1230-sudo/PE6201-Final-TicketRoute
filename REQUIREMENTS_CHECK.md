@@ -19,6 +19,7 @@ are not used for this check.
 | Duplicate-data limitations | 6 train/test text overlaps, 1 validation/test; extra strict test sensitivity score | Detected/disclosed; full score pending |
 | Responsible use and silent failures | Fixed schema, input checks, human review; confident errors shown honestly | Implemented; operational audit remains proposed |
 | Cost and latency | New usage/charge/ID ledger; old actual cost unknown; cached resume | Implemented; new measurements pending |
+| Runs on another person's machine | Watchouts p.3 final check 4; bundled data, Python 3.10+, documented local startup | Local scripts checked; user-machine execution pending |
 | Working GitHub repository | Private repository created: https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute | 69 source/evidence files uploaded; instructor access still requires checking |
 | Trade-off report ≤ 1,200 words | Evidence-backed draft plus automatic word count | Draft only until final results |
 | Recorded demo | Working replay/keyword UI and complete script | Recording pending |
@@ -33,3 +34,14 @@ choice, not an imported AR/A2 rule.
 
 Submission is **not yet complete**. The preparation work is ready for the paid
 evaluation, followed by final report, independent GitHub publication and demo.
+
+## Runtime requirement clarification — 27 September 2026
+
+Watchouts p.3 explicitly says: "Your repository will run on someone else's machine."
+The available Final Project documents do not require every evaluation to be
+performed personally on the student's local computer. The user has nevertheless
+chosen local execution. START_HERE_CN.md gives Mac and Windows steps, hidden
+key entry, progress interpretation, error handling and the results ZIP handoff.
+No cloud evaluation workflow has been published or started. The standalone
+Project Rubric and personal instructor feedback remain unavailable; do not
+claim that unseen requirements have been verified.

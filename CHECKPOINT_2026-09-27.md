@@ -34,3 +34,9 @@ has been modified. No GitHub password or OTP was exposed to the model.
 
 Deadline source: latest Class 6 C3 slides pp.14–15, 4 October 2026 at 23:59 SGT.
 The older timeline date is superseded. Feedback was not found or invented.
+
+User decision: use local execution. Detailed START_HERE_CN.md now prioritizes
+Terminal startup with the supplied launcher, explains hidden key entry and
+precise completion/error handling, and includes Windows commands. The proposed
+cloud alternative was not published or run. Program source and classifier
+configuration remain the previously verified version.
