@@ -28,7 +28,8 @@ complete the recorded demo and confirm instructor access to the private repo.
 
 The user completed secure GitHub sign-in. Independent private repository created:
 https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute
-Source is prepared for a single initial project commit. No insurance repository
+69 source and evidence files were uploaded in project commit
+7641ffcfb16eb91628b5dfc7e35f23cd0b643b81. No insurance repository
 has been modified. No GitHub password or OTP was exposed to the model.
 
 Deadline source: latest Class 6 C3 slides pp.14–15, 4 October 2026 at 23:59 SGT.

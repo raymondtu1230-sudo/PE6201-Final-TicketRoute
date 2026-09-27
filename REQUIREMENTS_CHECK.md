@@ -19,7 +19,7 @@ are not used for this check.
 | Duplicate-data limitations | 6 train/test text overlaps, 1 validation/test; extra strict test sensitivity score | Detected/disclosed; full score pending |
 | Responsible use and silent failures | Fixed schema, input checks, human review; confident errors shown honestly | Implemented; operational audit remains proposed |
 | Cost and latency | New usage/charge/ID ledger; old actual cost unknown; cached resume | Implemented; new measurements pending |
-| Working GitHub repository | Private repository created: https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute | Source upload prepared; instructor access still requires checking |
+| Working GitHub repository | Private repository created: https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute | 69 source/evidence files uploaded; instructor access still requires checking |
 | Trade-off report ≤ 1,200 words | Evidence-backed draft plus automatic word count | Draft only until final results |
 | Recorded demo | Working replay/keyword UI and complete script | Recording pending |
 | Proposal milestone | 23 August submission recorded in preserved checkpoint | User's earlier submission record; receipt not reverified |
