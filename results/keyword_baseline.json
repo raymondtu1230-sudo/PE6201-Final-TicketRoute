@@ -1,0 +1,58 @@
+{
+  "n": 3080,
+  "accuracy": 0.3808441558441558,
+  "macro_f1": 0.37862054761473224,
+  "model": "literal_keyword_overlap",
+  "top_confusions": [
+    {
+      "true": "verify_my_identity",
+      "predicted": "why_verify_identity",
+      "count": 36
+    },
+    {
+      "true": "card_acceptance",
+      "predicted": "activate_my_card",
+      "count": 34
+    },
+    {
+      "true": "card_linking",
+      "predicted": "activate_my_card",
+      "count": 32
+    },
+    {
+      "true": "apple_pay_or_google_pay",
+      "predicted": "pending_top_up",
+      "count": 32
+    },
+    {
+      "true": "automatic_top_up",
+      "predicted": "pending_top_up",
+      "count": 27
+    },
+    {
+      "true": "card_arrival",
+      "predicted": "activate_my_card",
+      "count": 26
+    },
+    {
+      "true": "top_up_failed",
+      "predicted": "pending_top_up",
+      "count": 26
+    },
+    {
+      "true": "top_up_limits",
+      "predicted": "pending_top_up",
+      "count": 25
+    },
+    {
+      "true": "card_swallowed",
+      "predicted": "activate_my_card",
+      "count": 25
+    },
+    {
+      "true": "compromised_card",
+      "predicted": "activate_my_card",
+      "count": 24
+    }
+  ]
+}

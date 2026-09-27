@@ -1,0 +1,12 @@
+{
+  "source_sha256": {
+    "TicketRoute_v3_validation_100_report.json": "38efd9bffdcdee5df1bab242e41ace3b7b9af8cefe05e883dee23f95227d1fb8",
+    "TicketRoute_v3_validation_100_predictions.csv": "b3eae5dcfe837d058aee3d2b124811f462fb35af510d35141fc3e2f24100b14d"
+  },
+  "rows": 100,
+  "truth_labels": 48,
+  "cached_for_resume": 100,
+  "original_cost_and_tokens": null,
+  "original_macro_f1_label_policy": "union of labels observed in pilot truth and predictions",
+  "warning": "Pilot evidence only; not an official-test score or proof of all-77-label target achievement."
+}

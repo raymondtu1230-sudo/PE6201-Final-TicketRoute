@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.runlock
+*.tmp
+*.zip
+# Preserve public benchmark predictions and billing evidence, never credentials.
+# Teacher documents belong in the personal package, not the code repository.
+docs/*.pdf
+submission/*.docx
+submission/*.pdf

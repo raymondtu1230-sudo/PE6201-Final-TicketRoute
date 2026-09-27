@@ -1,0 +1,17 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux",
+  "unit_tests": 27,
+  "unit_tests_passed": 27,
+  "local_http_checks_passed": 10,
+  "real_new_api_calls": 0,
+  "full_validation_complete": false,
+  "official_llm_test_complete": false,
+  "github_created_or_changed": true,
+  "graphical_browser_verification": "Unavailable in this environment; local HTTP behavior checked",
+  "historical_prediction_rows": 100,
+  "scope": "PE6201 individual Final Project TicketRoute only",
+  "github_repository": "https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute",
+  "github_visibility": "private",
+  "insurance_repository_modified": false
+}

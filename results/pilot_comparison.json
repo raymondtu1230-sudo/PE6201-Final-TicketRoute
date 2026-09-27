@@ -1,0 +1,151 @@
+{
+  "historical_observed_label_macro": {
+    "n": 100,
+    "accuracy": 0.87,
+    "macro_f1": 0.861095238095238,
+    "metric_label_count": 50,
+    "truth_label_count": 48,
+    "abstention": {
+      "threshold": 0.7,
+      "answered_count": 97,
+      "abstained_count": 3,
+      "coverage": 0.97,
+      "abstention_rate": 0.03,
+      "answered_accuracy": 0.8865979381443299,
+      "abstained_would_be_error_rate": 0.6666666666666666
+    },
+    "top_confusions": [
+      {
+        "true": "exchange_via_app",
+        "predicted": "fiat_currency_support",
+        "count": 2
+      },
+      {
+        "true": "beneficiary_not_allowed",
+        "predicted": "declined_transfer",
+        "count": 2
+      },
+      {
+        "true": "declined_cash_withdrawal",
+        "predicted": "declined_card_payment",
+        "count": 1
+      },
+      {
+        "true": "direct_debit_payment_not_recognised",
+        "predicted": "card_payment_not_recognised",
+        "count": 1
+      },
+      {
+        "true": "failed_transfer",
+        "predicted": "declined_transfer",
+        "count": 1
+      },
+      {
+        "true": "transfer_fee_charged",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 1
+      },
+      {
+        "true": "card_payment_fee_charged",
+        "predicted": "extra_charge_on_statement",
+        "count": 1
+      },
+      {
+        "true": "Refund_not_showing_up",
+        "predicted": "request_refund",
+        "count": 1
+      },
+      {
+        "true": "balance_not_updated_after_bank_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 1
+      },
+      {
+        "true": "pending_card_payment",
+        "predicted": "transfer_timing",
+        "count": 1
+      }
+    ],
+    "model": "openai/gpt-5-mini",
+    "prompt_version": "contrastive_taxonomy_v3",
+    "model_output_failures": 0,
+    "legacy_usage_missing_rows": 100,
+    "latency_ms_median": 2998.5,
+    "latency_ms_p95": 5414.0
+  },
+  "fixed_77_label_macro": {
+    "n": 100,
+    "accuracy": 0.87,
+    "macro_f1": 0.5591527520098949,
+    "metric_label_count": 77,
+    "truth_label_count": 48,
+    "abstention": {
+      "threshold": 0.7,
+      "answered_count": 97,
+      "abstained_count": 3,
+      "coverage": 0.97,
+      "abstention_rate": 0.03,
+      "answered_accuracy": 0.8865979381443299,
+      "abstained_would_be_error_rate": 0.6666666666666666
+    },
+    "top_confusions": [
+      {
+        "true": "exchange_via_app",
+        "predicted": "fiat_currency_support",
+        "count": 2
+      },
+      {
+        "true": "beneficiary_not_allowed",
+        "predicted": "declined_transfer",
+        "count": 2
+      },
+      {
+        "true": "declined_cash_withdrawal",
+        "predicted": "declined_card_payment",
+        "count": 1
+      },
+      {
+        "true": "direct_debit_payment_not_recognised",
+        "predicted": "card_payment_not_recognised",
+        "count": 1
+      },
+      {
+        "true": "failed_transfer",
+        "predicted": "declined_transfer",
+        "count": 1
+      },
+      {
+        "true": "transfer_fee_charged",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 1
+      },
+      {
+        "true": "card_payment_fee_charged",
+        "predicted": "extra_charge_on_statement",
+        "count": 1
+      },
+      {
+        "true": "Refund_not_showing_up",
+        "predicted": "request_refund",
+        "count": 1
+      },
+      {
+        "true": "balance_not_updated_after_bank_transfer",
+        "predicted": "transfer_not_received_by_recipient",
+        "count": 1
+      },
+      {
+        "true": "pending_card_payment",
+        "predicted": "transfer_timing",
+        "count": 1
+      }
+    ],
+    "model": "openai/gpt-5-mini",
+    "prompt_version": "contrastive_taxonomy_v3",
+    "model_output_failures": 0,
+    "legacy_usage_missing_rows": 100,
+    "latency_ms_median": 2998.5,
+    "latency_ms_p95": 5414.0
+  },
+  "warning": "Only 48 truth labels appear in 100 pilot queries; neither pilot macro definition is the final test metric."
+}

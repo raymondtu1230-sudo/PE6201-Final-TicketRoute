@@ -1,0 +1,19 @@
+{
+  "train_rows": 10003,
+  "train_core_rows": 8004,
+  "validation_rows": 1998,
+  "test_rows": 3080,
+  "prompt_examples": 154,
+  "prompt_validation_overlap": 0,
+  "prompt_test_overlap": 0,
+  "validation_truth_labels": 77,
+  "test_truth_labels": 77,
+  "train_validation_text_overlap": 0,
+  "validation_test_text_overlap": 1,
+  "train_test_text_overlap": 6,
+  "validation_unique_texts": 1997,
+  "test_unique_texts": 3079,
+  "historical_pilot_rows": 100,
+  "new_unique_calls_needed": 4976,
+  "sensitivity_policy": "Additionally score unique test texts absent from the entire original training file; preserve official test as primary."
+}

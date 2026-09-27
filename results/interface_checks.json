@@ -1,0 +1,16 @@
+{
+  "passed": [
+    "/health",
+    "/replay?case=correct",
+    "/replay?case=review",
+    "/replay?case=error",
+    "/evidence",
+    "/baseline",
+    "/scope",
+    "POST keyword",
+    "POST replay",
+    "POST live"
+  ],
+  "new_api_calls": 0,
+  "method": "Local HTTP requests; no graphical browser verification"
+}

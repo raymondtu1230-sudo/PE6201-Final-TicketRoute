@@ -1,0 +1,5 @@
+PE6201 individual Final Project TicketRoute
+Prepared 2026-09-27
+Prompt: contrastive_taxonomy_v3 (unchanged)
+Client: v3_audited_io_2026-09-27
+Status: pilot preserved, offline checks complete, full evaluation pending API key

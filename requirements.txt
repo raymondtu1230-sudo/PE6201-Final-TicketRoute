@@ -1,0 +1,2 @@
+# TicketRoute intentionally uses only the Python 3 standard library.
+# No third-party packages are required for the app, tests, or evaluation.

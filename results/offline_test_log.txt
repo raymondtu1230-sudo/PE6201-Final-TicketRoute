@@ -1,0 +1,33 @@
+test_budget_uses_decimal_and_blocks_unknown_charge (test_audited_workflow.AuditedWorkflowTests.test_budget_uses_decimal_and_blocks_unknown_charge) ... ok
+test_cache_from_another_model_is_rejected (test_audited_workflow.AuditedWorkflowTests.test_cache_from_another_model_is_rejected) ... ok
+test_entire_frozen_workflow_and_zero_call_resume_with_synthetic_client (test_audited_workflow.AuditedWorkflowTests.test_entire_frozen_workflow_and_zero_call_resume_with_synthetic_client) ... ok
+test_fixed_label_macro_includes_unobserved_intents (test_audited_workflow.AuditedWorkflowTests.test_fixed_label_macro_includes_unobserved_intents) ... ok
+test_missing_or_invalid_billing_is_not_free (test_audited_workflow.AuditedWorkflowTests.test_missing_or_invalid_billing_is_not_free) ... ok
+test_model_failure_counts_and_is_not_retried (test_audited_workflow.AuditedWorkflowTests.test_model_failure_counts_and_is_not_retried) ... ok
+test_no_qualifying_threshold_means_all_human_review (test_audited_workflow.AuditedWorkflowTests.test_no_qualifying_threshold_means_all_human_review) ... ok
+test_real_response_metadata_is_retained (test_audited_workflow.AuditedWorkflowTests.test_real_response_metadata_is_retained) ... ok
+test_restore_100_real_rows_is_idempotent_and_requires_zero_calls (test_audited_workflow.AuditedWorkflowTests.test_restore_100_real_rows_is_idempotent_and_requires_zero_calls) ... ok
+test_shared_calibration_supports_all_review_and_checks_lock (test_audited_workflow.AuditedWorkflowTests.test_shared_calibration_supports_all_review_and_checks_lock) ... ok
+test_spending_stop_before_next_call (test_audited_workflow.AuditedWorkflowTests.test_spending_stop_before_next_call) ... ok
+test_success_with_missing_usage_is_saved_but_stops_next_call (test_audited_workflow.AuditedWorkflowTests.test_success_with_missing_usage_is_saved_but_stops_next_call) ... ok
+test_transport_failure_stops_without_inventing_a_prediction (test_audited_workflow.AuditedWorkflowTests.test_transport_failure_stops_without_inventing_a_prediction) ... ok
+test_keyword_baseline_is_reproducible (test_baseline.BaselineTests.test_keyword_baseline_is_reproducible) ... ok
+test_official_data_integrity_and_shape (test_data.DataTests.test_official_data_integrity_and_shape) ... ok
+test_validation_split_and_examples_do_not_leak (test_data.DataTests.test_validation_split_and_examples_do_not_leak) ... ok
+test_auto_threshold_matches_model (test_evaluate.ThresholdResolutionTests.test_auto_threshold_matches_model) ... ok
+test_auto_threshold_rejects_other_model (test_evaluate.ThresholdResolutionTests.test_auto_threshold_rejects_other_model) ... ok
+test_numeric_threshold (test_evaluate.ThresholdResolutionTests.test_numeric_threshold) ... ok
+test_old_prompt_cache_is_not_reused (test_evaluate.ThresholdResolutionTests.test_old_prompt_cache_is_not_reused) ... ok
+test_resume_calls_only_uncached_rows (test_evaluate.ThresholdResolutionTests.test_resume_calls_only_uncached_rows) ... ok
+test_classification_and_abstention_metrics (test_metrics.MetricsTests.test_classification_and_abstention_metrics) ... ok
+test_client_parses_a_structured_response (test_openrouter_client.OpenRouterClientTests.test_client_parses_a_structured_response) ... ok
+test_content_block_response_is_parsed (test_openrouter_client.OpenRouterClientTests.test_content_block_response_is_parsed) ... ok
+test_truncated_response_reports_finish_reason (test_openrouter_client.OpenRouterClientTests.test_truncated_response_reports_finish_reason) ... ok
+test_unknown_label_is_rejected (test_openrouter_client.OpenRouterClientTests.test_unknown_label_is_rejected) ... ok
+test_valid_structured_prediction_and_abstention (test_openrouter_client.OpenRouterClientTests.test_valid_structured_prediction_and_abstention) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 7.658s
+
+OK
+Using validation-calibrated threshold: 0.68

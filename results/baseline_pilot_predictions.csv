@@ -1,0 +1,101 @@
+text,truth,keyword,majority
+There is a payment made with my card that I don't recognize at all.,card_payment_not_recognised,reverted_card_payment?,card_payment_fee_charged
+I got charged in double and want a refund,transaction_charged_twice,request_refund,card_payment_fee_charged
+I'm happy with Mastercard and want to stick with just that credit card.,visa_or_mastercard,activate_my_card,card_payment_fee_charged
+Can I have a duplicate second card?,getting_spare_card,activate_my_card,card_payment_fee_charged
+What is the age limit?,age_limit,age_limit,card_payment_fee_charged
+Can you please check my UK Account to make sure everything went alright?  I made the transfer a couple of hours ago.,balance_not_updated_after_bank_transfer,transfer_into_account,card_payment_fee_charged
+I was declined when I tried to withdraw cash!,declined_cash_withdrawal,declined_cash_withdrawal,card_payment_fee_charged
+How do I receive a card?,order_physical_card,activate_my_card,card_payment_fee_charged
+I don't think that my top-up worked.,top_up_failed,pending_top_up,card_payment_fee_charged
+why would i be declined if i had money iin my account,declined_cash_withdrawal,declined_transfer,card_payment_fee_charged
+I can't find my PIN anywhere.,get_physical_card,change_pin,card_payment_fee_charged
+how to change name on account,edit_personal_details,change_pin,card_payment_fee_charged
+"Recently, a few weeks ago there was a transaction made on my account by some seller that I don't recognize. I am very certain that didn't happen  and will like for you to trace back to make sure.",direct_debit_payment_not_recognised,terminate_account,card_payment_fee_charged
+I need my card activated.,activate_my_card,activate_my_card,card_payment_fee_charged
+Is the PIN separately delivered?,get_physical_card,change_pin,card_payment_fee_charged
+Please give me a Mastercard instead.,visa_or_mastercard,visa_or_mastercard,card_payment_fee_charged
+What other currencies are available to change to?,exchange_via_app,change_pin,card_payment_fee_charged
+"My transfer is pending, why?",pending_transfer,pending_transfer,card_payment_fee_charged
+How do I replace my card before it expires?,card_about_to_expire,activate_my_card,card_payment_fee_charged
+What currences are available for exchange?,exchange_via_app,exchange_charge,card_payment_fee_charged
+"The transfer keeps failing - I tried to transfer some money to friends this morning but it keeps getting rejected for some reason, I have no idea why",failed_transfer,cancel_transfer,card_payment_fee_charged
+What is your maximum top up limit per day?,top_up_limits,pending_top_up,card_payment_fee_charged
+Two days ago I did a transfer to another account within the country.  It doesn't appear the transfer went through.  I have verified the account number several times.  Could you please check on this for me?,transfer_not_received_by_recipient,transfer_into_account,card_payment_fee_charged
+Top up keeps failing,top_up_failed,pending_top_up,card_payment_fee_charged
+I want a mastercard,visa_or_mastercard,visa_or_mastercard,card_payment_fee_charged
+"If I want to send out more cards, do you charge extra for that?",getting_spare_card,extra_charge_on_statement,card_payment_fee_charged
+Can I receive payments in another currency?,receiving_money,fiat_currency_support,card_payment_fee_charged
+I might need a new card because it's not working at any of the ATMs. I don't think ive used all my money. Why is it doing this?,declined_cash_withdrawal,card_not_working,card_payment_fee_charged
+How is the PIN delivered?,get_physical_card,change_pin,card_payment_fee_charged
+You advertise no fee when paying with a card then my statement shows a fee.,card_payment_fee_charged,card_payment_fee_charged,card_payment_fee_charged
+I tried to get cash at some ATM in the city centre earlier but the machine declined my card. I've seen it still shows up as pending in my account. Please cancel it immediately as I definitely have not received that money!,pending_cash_withdrawal,declined_cash_withdrawal,card_payment_fee_charged
+I entered the wrong pin too many times and now I think it's blocked. What do I do?,pin_blocked,pin_blocked,card_payment_fee_charged
+Why was I charged for withdrawing cash?,cash_withdrawal_charge,cash_withdrawal_charge,card_payment_fee_charged
+What cards do you support,supported_cards_and_currencies,country_support,card_payment_fee_charged
+What do I do if I have been charged twice?,transaction_charged_twice,transaction_charged_twice,card_payment_fee_charged
+What is the time period for money to be transferred?,transfer_timing,receiving_money,card_payment_fee_charged
+"I made a transfer and according to the receiver ""they haven't received the right amount"" Its lesser than it should be.Now I have to transfer more money to make up for the missing amount . Can you please help me about this, what should be done ?",transfer_fee_charged,wrong_amount_of_cash_received,card_payment_fee_charged
+I finished my transfer. I am having an issue with it still pending. It has been a long time and i'm growing impatient,pending_transfer,pending_transfer,card_payment_fee_charged
+"When I received my cash, the exchange rate was wrong.",wrong_exchange_rate_for_cash_withdrawal,wrong_exchange_rate_for_cash_withdrawal,card_payment_fee_charged
+I found my card! Can I link it back into the app?,card_linking,activate_my_card,card_payment_fee_charged
+I got a message that I cannot name X as a beneficiary.,beneficiary_not_allowed,beneficiary_not_allowed,card_payment_fee_charged
+are multiple currencies acceptable?,fiat_currency_support,supported_cards_and_currencies,card_payment_fee_charged
+I set up a payment to a new payee and sent some money but the person I'm sending it to has not received it.  Can you check where the money is?,transfer_not_received_by_recipient,card_payment_not_recognised,card_payment_fee_charged
+My cash withdrawal shows as pending still.,pending_cash_withdrawal,pending_cash_withdrawal,card_payment_fee_charged
+I am trying  to  transfer and  it has been  stopped why is  that,beneficiary_not_allowed,cancel_transfer,card_payment_fee_charged
+What is your policy on withdrawing cash from an ATM? There is a fee on my account that wasn't there before I paid for my groceries.,cash_withdrawal_charge,terminate_account,card_payment_fee_charged
+My top up isnt working,top_up_failed,pending_top_up,card_payment_fee_charged
+My morning transaction needs to be canceled.,cancel_transfer,transaction_charged_twice,card_payment_fee_charged
+How do I transfer funds if I am paid in GBP?,receiving_money,cancel_transfer,card_payment_fee_charged
+What is this fee showing up in my account for?,card_payment_fee_charged,Refund_not_showing_up,card_payment_fee_charged
+Why would my payment for my card show as pending?,pending_card_payment,pending_card_payment,card_payment_fee_charged
+Can someone in the US have a card?,country_support,activate_my_card,card_payment_fee_charged
+I have a second credit card from the US. Will you take it?,supported_cards_and_currencies,activate_my_card,card_payment_fee_charged
+Where in the European Union can I get a card?,country_support,get_physical_card,card_payment_fee_charged
+What is the charge for topping up a card?,top_up_by_card_charge,topping_up_by_card,card_payment_fee_charged
+What do I do after the ATM takes my card.,card_swallowed,activate_my_card,card_payment_fee_charged
+How can I prove the source of my funds?,verify_source_of_funds,verify_source_of_funds,card_payment_fee_charged
+Someone else made a Direct Debit transaction on my account,direct_debit_payment_not_recognised,direct_debit_payment_not_recognised,card_payment_fee_charged
+I've been waiting for a refund where is it?,Refund_not_showing_up,request_refund,card_payment_fee_charged
+When do I set up my card PIN?,get_physical_card,topping_up_by_card,card_payment_fee_charged
+Can you please assist me in completing a transfer? I'm trying and I keep getting an error. I'm trying to purchase a flat and pay the initial mortgage payment. All I keep getting is an error. Can you find out what's happening here?,failed_transfer,cancel_transfer,card_payment_fee_charged
+atm refused to give me money,declined_cash_withdrawal,receiving_money,card_payment_fee_charged
+"I sent a payment, but the person I sent it to says they don't have it",transfer_not_received_by_recipient,reverted_card_payment?,card_payment_fee_charged
+How long until I see a cash withdrawal?,pending_cash_withdrawal,cash_withdrawal_charge,card_payment_fee_charged
+There was a charge applied when I used my card.,card_payment_fee_charged,top_up_by_card_charge,card_payment_fee_charged
+The app is showing mt withdrawals that aren't  mine.,cash_withdrawal_not_recognised,exchange_via_app,card_payment_fee_charged
+It appears my top-ups have been canceled.,top_up_reverted,pending_top_up,card_payment_fee_charged
+How long does it take for pending to go through,pending_transfer,pending_transfer,card_payment_fee_charged
+why cant you just refund me instead of a merchant,Refund_not_showing_up,request_refund,card_payment_fee_charged
+"I would like a disposable virtual card, could I get one?",get_disposable_virtual_card,get_disposable_virtual_card,card_payment_fee_charged
+I would like to cancel a transfer,cancel_transfer,cancel_transfer,card_payment_fee_charged
+"This company is bad, delete my account now.",terminate_account,terminate_account,card_payment_fee_charged
+i tried to transfer cryptocurrency into my account but was denied,beneficiary_not_allowed,transfer_into_account,card_payment_fee_charged
+"How long does a transfer from a UK account take? I just made one and it doesn't seem to be working, wondering if everything is okay",balance_not_updated_after_bank_transfer,transfer_into_account,card_payment_fee_charged
+A payment on my statement is wrong.,card_payment_not_recognised,card_payment_wrong_exchange_rate,card_payment_fee_charged
+Why haven't I gotten my payment yet?,pending_card_payment,reverted_card_payment?,card_payment_fee_charged
+why was a extra fee added to my account for transfer ?,transfer_fee_charged,transfer_fee_charged,card_payment_fee_charged
+How can I obtain a virtual card?,getting_virtual_card,getting_virtual_card,card_payment_fee_charged
+Can I use your app to exchange USD for GBP?,exchange_via_app,exchange_via_app,card_payment_fee_charged
+There is a €1 extra fee in my statement,extra_charge_on_statement,extra_charge_on_statement,card_payment_fee_charged
+Am I able to use my American Express to add money to my account balance?,supported_cards_and_currencies,terminate_account,card_payment_fee_charged
+I have yet to receive my virtual card,getting_virtual_card,getting_virtual_card,card_payment_fee_charged
+My top up doesn't work,top_up_failed,pending_top_up,card_payment_fee_charged
+It's not letting me transfer money to my beneficiery.,beneficiary_not_allowed,transfer_not_received_by_recipient,card_payment_fee_charged
+I want to cancel a transaction from this morning.,cancel_transfer,cancel_transfer,card_payment_fee_charged
+I'm not sure what I need to verify my identity.,verify_my_identity,why_verify_identity,card_payment_fee_charged
+Why does my transfer keep failing? I've tried 5 times and they all failed.,failed_transfer,failed_transfer,card_payment_fee_charged
+I changed my mind on something I purchased through you and I need the transaction canceled and a refund as soon as possible. Can you help me please?,request_refund,request_refund,card_payment_fee_charged
+There is a payment on my card that I do not recognize.,card_payment_not_recognised,card_payment_not_recognised,card_payment_fee_charged
+I think I was double charged,transaction_charged_twice,transaction_charged_twice,card_payment_fee_charged
+"I don't understand what a disposable virtual card is, can you help?",get_disposable_virtual_card,get_disposable_virtual_card,card_payment_fee_charged
+"I got my card now, how do I make it show up in the app?",card_linking,topping_up_by_card,card_payment_fee_charged
+What is the verification code for my top up card?,verify_top_up,top_up_by_card_charge,card_payment_fee_charged
+My card has been compromised. I see a bunch of online shopping charges that I didn't make. I need to freeze it immediately.,compromised_card,compromised_card,card_payment_fee_charged
+I was supposed to get a refund but I do not see it on my statement. When is it going to be updated?,Refund_not_showing_up,Refund_not_showing_up,card_payment_fee_charged
+Are bank transfers immediate?,balance_not_updated_after_bank_transfer,balance_not_updated_after_bank_transfer,card_payment_fee_charged
+I keep checking my statements but nothing shows up! I requested a refund a long time ago but seems it's not reaching my account for some reason. Can you please help me get the money back from the seller for me,Refund_not_showing_up,Refund_not_showing_up,card_payment_fee_charged
+"My card's expiration is approaching, how do I replace it.",card_about_to_expire,activate_my_card,card_payment_fee_charged
+Do you have a return policy?,request_refund,card_payment_fee_charged,card_payment_fee_charged
+Is there a limit to how much I can top up?,top_up_limits,pending_top_up,card_payment_fee_charged
