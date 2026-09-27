@@ -30,7 +30,7 @@ class EvaluationStopped(RuntimeError):
 
 
 class AttemptLedger:
-    def __init__(self, path: Path, budget_usd: str = "12.00", reserve_usd: str = "0.05"):
+    def __init__(self, path: Path, budget_usd: str = "7.00", reserve_usd: str = "0.05"):
         self.path = path
         self.budget = Decimal(str(budget_usd))
         self.reserve = Decimal(str(reserve_usd))

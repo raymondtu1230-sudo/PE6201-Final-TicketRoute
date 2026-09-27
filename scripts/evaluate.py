@@ -77,7 +77,7 @@ def resolve_threshold(
     path = calibration_path or ROOT / "results" / "calibrated_threshold.json"
     if not path.exists():
         raise SystemExit(
-            "No saved validation threshold. Run calibrate_validation_mac.command first."
+            "No saved validation threshold. Use START_HERE_MAC.command choice 2 to finish validation first."
         )
     try:
         saved = json.loads(path.read_text(encoding="utf-8"))

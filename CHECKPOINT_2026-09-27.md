@@ -22,8 +22,8 @@ analysis and strict test sensitivity output; one-command full evaluation;
 Synthetic integration fixtures are not benchmark evidence. No new real paid API
 calls were made. No full validation or official LLM test results exist yet.
 
-Pending: run START_HERE_MAC.command with the course key entered locally and
-return TicketRoute_Results.zip. Then verify actual outcomes, finish DOCX/PDF,
+Pending: run START_HERE_MAC.command, choose 1, enter the course key locally,
+and return TicketRoute_Results.zip for cost review before choosing 2. Then verify actual outcomes, finish DOCX/PDF,
 complete the recorded demo and confirm instructor access to the private repo.
 
 The user completed secure GitHub sign-in. Independent private repository created:
@@ -48,3 +48,20 @@ probe charges and cached predictions. Actual affordability remains unverified
 until the user's cost-check results arrive. These launchers preserve the frozen
 classifier, original 100-row evidence and official evaluation design. No new
 real API calls were made here.
+
+Consolidation update: the user requested one complete package and one end-to-end
+path. TicketRoute_Complete_Start_Here.zip extracts to TicketRoute_Start_Here and
+includes only START_HERE_MAC.command as a visible Mac launcher. Menu 1 runs the
+US$0.10 cost probe; menu 2 resumes at US$7 cumulative; menu 3 opens the demo. Old
+repository launchers now delegate to the same entry. Runtime/default-report
+budget fallbacks also use US$7. No evaluation method or original evidence changed.
+The old preparation DOCX/PDF snapshots are omitted from this operating package;
+current draft Markdown/HTML are included and will be regenerated from real
+results. Source code and data are synced to the independent GitHub repository.
+No real API calls were made to prepare or check this consolidated package.
+
+Repository byte audit found that the earlier text upload normalized CSV CRLF
+line endings to LF. The consolidated update restores exact local/source bytes
+in GitHub, including both datasets and the preserved pilot CSV. CSV checkout
+normalization is disabled with .gitattributes so the existing SHA-256 checks
+remain meaningful. No text, label or prediction is altered by this repair.

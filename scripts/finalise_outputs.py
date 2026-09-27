@@ -65,7 +65,7 @@ def report_text(root):
         test_cell='pending / pending'
     k=baseline['splits']['test']['keyword']; m=baseline['splits']['test']['majority']
     kp=baseline['splits']['pilot']['keyword']
-    budget=read_json(root/'results'/'evaluation_budget.json') or {'budget_usd':'12.00','reserve_usd':'0.05'}
+    budget=read_json(root/'results'/'evaluation_budget.json') or {'budget_usd':'7.00','reserve_usd':'0.05'}
     ledger=AttemptLedger(root/'results'/'api_attempts.jsonl',budget['budget_usd']).summary()
     if ledger['attempts']:
         cost=f"The new-run ledger contains {ledger['attempts']} attempts, with US${ledger['known_cost_usd']} accounted for and {ledger['unknown_cost_attempts']} attempts of unknown cost. Original pilot costs and token counts were not logged, so a complete lifetime project cost cannot be calculated."

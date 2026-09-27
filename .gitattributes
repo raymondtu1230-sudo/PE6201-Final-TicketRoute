@@ -1,0 +1,2 @@
+# Preserve the original CSV bytes used by source/evidence SHA-256 checks.
+*.csv -text

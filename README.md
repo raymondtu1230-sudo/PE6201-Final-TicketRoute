@@ -19,58 +19,66 @@ offline tests and recomputed the baselines. Full validation and final LLM test
 require the course OpenRouter key. The working UI supports honest historical
 replay, a keyword mode and a separately labelled live mode.
 
-## Budget-first execution for the reported US$8 balance
+## One starting point
 
-Use `CHECK_COST_MAC.command` in the existing project folder first. It explicitly
-sets `--stage validation --budget-usd 0.10` on the existing runner. The US$0.05
-per-request reserve normally stops this small probe near US$0.05 recorded spend.
-A spending-cap stop is expected; retain and review `TicketRoute_Results.zip`.
-This is a local software guard, not a provider/account guarantee.
+Download the complete package once and read [START_HERE_CN.md](START_HERE_CN.md).
+The ZIP extracts to `TicketRoute_Start_Here`. Its only Mac launcher is
+`START_HERE_MAC.command`, with these menu choices:
 
-After reviewing actual charges and caching, `CONTINUE_WITH_7USD_MAC.command`
-resumes with a US$7 cumulative evaluation stop, including the probe spend.
-Do not reset the results directory or use the legacy US$12 launcher under this
-balance constraint. Completing all 4,976 new calls within US$8 is not guaranteed.
-No model, prompt, dataset split or target metric is changed by these launchers.
+| Choice | Action | Local evaluation stop |
+| --- | --- | --- |
+| 1 — first run | Offline checks, small validation cost probe, result ZIP | US$0.10 cumulative |
+| 2 — after reviewing probe evidence | Resume validation, freeze threshold, complete official test, export | US$7 cumulative, including probe charges |
+| 3 — demo | Open the local browser interface in recorded replay mode | No API charge in replay/keyword modes |
 
-## Quick start
+Return `TicketRoute_Results.zip` after choices 1 and 2. Use the same folder
+throughout; do not download a second launcher, overwrite results or reset its
+ledger. The US$0.05 request reserve normally stops the first probe near US$0.05
+recorded spend. A spending-cap stop is expected for choice 1. Review other errors
+before resuming. These are software guards, not provider/account guarantees.
+Completing all remaining 4,976 new calls within the reported US$8 balance is not
+guaranteed. The frozen model, prompt, data splits and metrics are unchanged.
 
 Python **3.10 or newer** is the only runtime requirement. No pip packages, model
 weights, database or web framework are needed. Bundled public data works offline.
+For Mac Terminal: type `caffeinate -i bash`, add a space, drag the launcher into
+the window, press Return, then choose 1. Keep the lid open and power connected.
+The repository retains old launcher names only as compatibility wrappers around
+the same primary entry; the complete ZIP omits them to keep one visible entry.
 
-On a Mac, read [START_HERE_CN.md](START_HERE_CN.md):
+## Command-line reproduction
 
-- `START_HERE_MAC.command`: checks, full validation, threshold freeze, final test,
-  report draft and `TicketRoute_Results.zip` in one workflow.
-- `OPEN_DEMO_MAC.command`: opens the local interface, initially without paid calls.
-- `CHECK_OFFLINE_MAC.command`: verifies the existing evidence without an API key.
-
-From a terminal on macOS, Linux or Windows with Python available:
+From the project directory with Python available:
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 scripts/run_project.py --offline
-python3 app.py --open-browser
 ```
 
-For the full evaluation, in a separate terminal:
+Start with the small cost probe:
 
 ```bash
-python3 scripts/run_project.py --prompt-for-key
+python3 scripts/run_project.py --prompt-for-key --stage validation --budget-usd 0.10
 ```
 
-Enter the API key only into the hidden local prompt. Do not put it in source
-files, screenshots, chat, commits or the report. An existing
-`OPENROUTER_API_KEY` environment variable is also supported. To resume ordinary
-completed/partial work, run the same command in the **same folder**.
+After reviewing the probe, resume in the **same folder**:
 
-A local US$12 new-evaluation spending stop excludes historical pilot charges.
-It checks recorded charges plus a US$0.05 reserve before the next call. This is
-not a provider-side account cap, and missing charges stop the run for inspection.
-There are no automatic service retries. A provider error, unknown charge or
-schema failure during the initial five new calls can stop the workflow; preserve
-and return the generated results ZIP. Live UI calls have a separate US$1 local
-stop and separate ledger. The key is never persisted by this program.
+```bash
+python3 scripts/run_project.py --prompt-for-key --budget-usd 7.00
+```
+
+Enter the OpenRouter key only in the hidden local prompt. Never include it in
+source files, screenshots, chat, commits or the report. An existing
+`OPENROUTER_API_KEY` environment variable is also supported. The key is not
+persisted by the application. Recorded evaluation charges accumulate across
+restarts; historical pilot charges are unknown and not included. The runner's
+default evaluation stop is also US$7, while menu choice 1 explicitly uses US$0.10.
+Unknown charges stop the run. There are no automatic service retries. Preserve
+the generated ZIP if a provider/schema error stops the initial compatibility check.
+
+Open the demo with menu choice 3 or `python3 app.py --open-browser`. Replay and
+keyword modes do not call the API. Live UI calls use a **separate** US$1 local
+stop and ledger; those additional charges still reduce the same provider balance.
 
 ## Evaluation design
 
@@ -154,3 +162,7 @@ are future requirements, not completed features. See `AI_ASSISTANCE.md`.
 Data is CC BY 4.0; see `DATA_LICENSE.md`. Code licence is in `LICENSE`. OpenRouter
 pricing and usage documentation were checked on 27 September 2026. Current usage
 is returned automatically; no deprecated `usage.include` parameter is added.
+
+CSV files retain their original line endings. `.gitattributes` disables automatic
+CSV newline conversion so source and historical-evidence byte hashes also verify
+after a fresh checkout on another machine.

@@ -171,7 +171,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--offline',action='store_true',help='Verify real pilot and baselines; no API calls')
     parser.add_argument('--prompt-for-key',action='store_true')
-    parser.add_argument('--budget-usd',default='12.00',help='Local new-run spending stop, excluding unknown historical pilot costs')
+    parser.add_argument('--budget-usd',default='7.00',help='Local new-run spending stop, excluding unknown historical pilot costs')
     parser.add_argument('--stage',choices=['all','validation','test'],default='all')
     args=parser.parse_args()
     state='offline_prepared'; message='Offline checks completed with no new model calls. See the saved reports for evaluation progress.'

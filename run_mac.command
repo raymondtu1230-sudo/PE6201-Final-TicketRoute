@@ -1,3 +1,3 @@
 #!/bin/bash
-cd "$(dirname "$0")" || exit 1
-exec bash OPEN_DEMO_MAC.command
+# Compatibility entry. The complete package uses START_HERE_MAC.command.
+exec /bin/bash "$(dirname "$0")/START_HERE_MAC.command" --demo

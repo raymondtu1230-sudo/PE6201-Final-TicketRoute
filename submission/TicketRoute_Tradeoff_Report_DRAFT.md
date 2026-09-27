@@ -36,7 +36,7 @@ The original 100-row evidence remains unchanged, and the pipeline recovers missi
 
 ## Cost and reliability
 
-No new paid calls have been made in this preparation run. The original pilot client did not log token usage, generation IDs or charges, so its actual cost is unknown. The proposal estimated about US$7.75 for validation and test; that was a planning estimate, not measured expenditure. New calls retain provider usage and cost, returned model, request hash and generation ID. A local US$12.00 spending stop and a US$0.05 reserve per next call limit the run; this is not a provider-enforced account cap. Missing charges stop further paid calls rather than becoming zero. Transport failures stop the run, and completed predictions remain cached. Invalid model outputs count as failures rather than being silently retried until correct.
+No new paid calls have been made in this preparation run. The original pilot client did not log token usage, generation IDs or charges, so its actual cost is unknown. The proposal estimated about US$7.75 for validation and test; that was a planning estimate, not measured expenditure. New calls retain provider usage and cost, returned model, request hash and generation ID. A local US$7.00 spending stop and a US$0.05 reserve per next call limit the run; this is not a provider-enforced account cap. Missing charges stop further paid calls rather than becoming zero. Transport failures stop the run, and completed predictions remain cached. Invalid model outputs count as failures rather than being silently retried until correct.
 
 ## Responsible use and conclusion
 

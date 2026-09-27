@@ -8,7 +8,7 @@ course rule. Do not call a recorded replay a new live model call.
 
 1. Finish full evaluation and review the actual final results. Until then, this
    is a pilot demonstration, not the final presentation.
-2. Open `OPEN_DEMO_MAC.command`. Use a clean browser window; hide keys, terminal
+2. Run `START_HERE_MAC.command` and choose `3`. Use a clean browser window; hide keys, terminal
    secrets, notifications and unrelated coursework.
 3. Have the final report and independent GitHub URL ready. The evaluation page
    automatically shows saved official-test metrics when present.
