@@ -1,5 +1,5 @@
 {
-  "state": "offline_prepared",
-  "message": "Offline checks completed with no new model calls. See the saved reports for evaluation progress.",
-  "updated_utc": "2026-09-27T11:43:10.078999+00:00"
+  "state": "evaluation_complete",
+  "message": "Evaluation evidence saved. Repository publication and the final recorded demo still need verification.",
+  "updated_utc": "2026-09-27T17:33:02.489466+00:00"
 }

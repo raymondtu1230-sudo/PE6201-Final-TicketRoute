@@ -1,0 +1,6 @@
+{
+  "configuration_sha256": "28bcff94953aac98824974fbc288bdda9f51616e4df9b1f51ceb5c0131d64650",
+  "calibration_sha256": "f130e8ad816ddfca7b98ca6f690832ae1dc02e7095c7729eeab1913f4c52ffc2",
+  "threshold": 0.6,
+  "rows": 3080
+}

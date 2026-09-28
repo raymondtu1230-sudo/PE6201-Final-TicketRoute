@@ -1,0 +1,76 @@
+{
+  "n": 3073,
+  "accuracy": 0.8522616335828181,
+  "macro_f1": 0.8489993211428566,
+  "metric_label_count": 77,
+  "truth_label_count": 77,
+  "abstention": {
+    "threshold": 0.6,
+    "answered_count": 3042,
+    "abstained_count": 31,
+    "coverage": 0.9899121379759193,
+    "abstention_rate": 0.010087862024080702,
+    "answered_accuracy": 0.8570019723865878,
+    "abstained_would_be_error_rate": 0.6129032258064516
+  },
+  "top_confusions": [
+    {
+      "true": "direct_debit_payment_not_recognised",
+      "predicted": "card_payment_not_recognised",
+      "count": 17
+    },
+    {
+      "true": "declined_transfer",
+      "predicted": "declined_card_payment",
+      "count": 12
+    },
+    {
+      "true": "pending_transfer",
+      "predicted": "transfer_timing",
+      "count": 12
+    },
+    {
+      "true": "beneficiary_not_allowed",
+      "predicted": "failed_transfer",
+      "count": 12
+    },
+    {
+      "true": "top_up_by_bank_transfer_charge",
+      "predicted": "transfer_fee_charged",
+      "count": 11
+    },
+    {
+      "true": "topping_up_by_card",
+      "predicted": "receiving_money",
+      "count": 11
+    },
+    {
+      "true": "compromised_card",
+      "predicted": "card_payment_not_recognised",
+      "count": 10
+    },
+    {
+      "true": "fiat_currency_support",
+      "predicted": "exchange_via_app",
+      "count": 8
+    },
+    {
+      "true": "top_up_by_bank_transfer_charge",
+      "predicted": "transfer_into_account",
+      "count": 8
+    },
+    {
+      "true": "country_support",
+      "predicted": "order_physical_card",
+      "count": 8
+    }
+  ],
+  "model": "openai/gpt-5-mini",
+  "prompt_version": "contrastive_taxonomy_v3",
+  "model_output_failures": 0,
+  "legacy_usage_missing_rows": 0,
+  "latency_ms_median": 2190.0,
+  "latency_ms_p95": 3709.0,
+  "policy": "unique test texts absent from original training file",
+  "configuration_sha256": "28bcff94953aac98824974fbc288bdda9f51616e4df9b1f51ceb5c0131d64650"
+}

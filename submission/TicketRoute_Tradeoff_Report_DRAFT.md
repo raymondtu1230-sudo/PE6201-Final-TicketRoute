@@ -2,7 +2,7 @@
 
 Tu Weikang · PE6201 individual Final Project · Section C
 
-PRE-FINAL DRAFT — 100-query pilot only; full validation and official test are still pending
+EVALUATION COMPLETE — submission draft awaiting repository and recorded-demo verification
 
 ## Problem and intended value
 
@@ -22,7 +22,7 @@ The model and contrastive-taxonomy-v3 prompt are frozen before completing valida
 
 ## Evidence and limitations
 
-The preserved 100-query validation pilot has 87 correct predictions, or 87.0% accuracy. Its historical macro-F1 is 0.8611 over the union of observed truth and prediction labels; only 48 of 77 true intents appear. That number cannot establish the all-77-label target. At the provisional 0.70 threshold, 97 queries are routed, three are deferred, and answered accuracy is 88.7%. Two of the three deferred predictions would have been wrong, but 11 wrong routes remain among the 97 accepted cases. This is direct evidence that self-reported confidence misses silent failures. The full 1,998-query validation run and 3,080-query official-test LLM run are not yet complete.
+The official test covers all 3,080 queries and 77 intents. GPT-5 mini achieves macro-F1 0.8489 and accuracy 85.2%. The predeclared 0.80 macro-F1 target is met. On validation, the frozen decision rule routes 98.8% at 85.1% answered accuracy. On test, it routes 3049 queries, defers 31 (1.0%), and achieves 85.7% answered accuracy. The would-be error rate among deferred test queries is 61.3%. These are empirical measurements, not a guarantee on new tickets. Model-output failures remain errors in the denominator and always require review. Excluding training-overlap texts and duplicate test texts leaves 3073 queries: macro-F1 0.8490, accuracy 85.2%.
 
 Comparable official-test scores below use the same fixed 77-label definition. The pilot keyword accuracy is 36.0%; its historical LLM score must not be compared directly with the full-test keyword score.
 
@@ -30,13 +30,13 @@ Comparable official-test scores below use the same fixed 77-label definition. Th
 | --- | --- |
 | Majority rule | 0.0003 / 1.3% |
 | Keyword overlap | 0.3786 / 38.1% |
-| GPT-5 mini | pending / pending |
+| GPT-5 mini | 0.8489 / 85.2% |
 
 The original 100-row evidence remains unchanged, and the pipeline recovers missing cached rows without buying those predictions again. Row-level outputs, failure counts, confusion pairs, per-intent results and latency summaries make later conclusions inspectable. The model alias may change behind the provider; new responses record the returned model identifier, so exact historical backend equivalence cannot be guaranteed.
 
 ## Cost and reliability
 
-No new paid calls have been made in this preparation run. The original pilot client did not log token usage, generation IDs or charges, so its actual cost is unknown. The proposal estimated about US$7.75 for validation and test; that was a planning estimate, not measured expenditure. New calls retain provider usage and cost, returned model, request hash and generation ID. A local US$7.00 spending stop and a US$0.05 reserve per next call limit the run; this is not a provider-enforced account cap. Missing charges stop further paid calls rather than becoming zero. Transport failures stop the run, and completed predictions remain cached. Invalid model outputs count as failures rather than being silently retried until correct.
+The new-run ledger contains 4976 attempts, with US$2.38183600 accounted for and 0 attempts of unknown cost. Original pilot costs and token counts were not logged, so a complete lifetime project cost cannot be calculated. New calls retain provider usage and cost, returned model, request hash and generation ID. A local US$7.00 spending stop and a US$0.05 reserve per next call limit the run; this is not a provider-enforced account cap. Missing charges stop further paid calls rather than becoming zero. Transport failures stop the run, and completed predictions remain cached. Invalid model outputs count as failures rather than being silently retried until correct.
 
 ## Responsible use and conclusion
 

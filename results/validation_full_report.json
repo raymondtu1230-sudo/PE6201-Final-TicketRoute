@@ -1,0 +1,76 @@
+{
+  "n": 1998,
+  "accuracy": 0.8448448448448449,
+  "macro_f1": 0.848468820662742,
+  "metric_label_count": 77,
+  "truth_label_count": 77,
+  "abstention": {
+    "threshold": 0.6,
+    "answered_count": 1975,
+    "abstained_count": 23,
+    "coverage": 0.9884884884884885,
+    "abstention_rate": 0.011511511511511512,
+    "answered_accuracy": 0.850632911392405,
+    "abstained_would_be_error_rate": 0.6521739130434783
+  },
+  "top_confusions": [
+    {
+      "true": "direct_debit_payment_not_recognised",
+      "predicted": "card_payment_not_recognised",
+      "count": 10
+    },
+    {
+      "true": "beneficiary_not_allowed",
+      "predicted": "declined_transfer",
+      "count": 9
+    },
+    {
+      "true": "topping_up_by_card",
+      "predicted": "receiving_money",
+      "count": 8
+    },
+    {
+      "true": "top_up_reverted",
+      "predicted": "top_up_failed",
+      "count": 8
+    },
+    {
+      "true": "top_up_by_bank_transfer_charge",
+      "predicted": "transfer_fee_charged",
+      "count": 8
+    },
+    {
+      "true": "card_payment_wrong_exchange_rate",
+      "predicted": "exchange_rate",
+      "count": 7
+    },
+    {
+      "true": "why_verify_identity",
+      "predicted": "verify_my_identity",
+      "count": 7
+    },
+    {
+      "true": "balance_not_updated_after_bank_transfer",
+      "predicted": "transfer_timing",
+      "count": 6
+    },
+    {
+      "true": "wrong_exchange_rate_for_cash_withdrawal",
+      "predicted": "cash_withdrawal_charge",
+      "count": 6
+    },
+    {
+      "true": "pending_transfer",
+      "predicted": "transfer_timing",
+      "count": 6
+    }
+  ],
+  "model": "openai/gpt-5-mini",
+  "prompt_version": "contrastive_taxonomy_v3",
+  "model_output_failures": 0,
+  "legacy_usage_missing_rows": 100,
+  "latency_ms_median": 2242.5,
+  "latency_ms_p95": 3788.0,
+  "split": "validation",
+  "configuration_sha256": "28bcff94953aac98824974fbc288bdda9f51616e4df9b1f51ceb5c0131d64650"
+}

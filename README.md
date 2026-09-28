@@ -8,6 +8,25 @@ It is independent of the insurance-claims AR/A2 assignment. See
 
 ## Current evidence
 
+**Full evaluation completed locally on 28 September 2026 and independently
+audited without new API calls.** All 1,998 validation rows and 3,080 official
+test rows are present. Official-test macro-F1 is **0.8489** and accuracy is
+**85.23%** (2,625/3,080), exceeding the proposal's macro-F1 target of 0.80.
+The validation-selected threshold is **0.60**. It accepts 3,049 test predictions
+at 85.70% accuracy and defers 31. There are still 436 accepted errors.
+The stricter 3,073-query subset gives macro-F1 0.8490. All 4,976 new API calls
+have reported charges totalling **US$2.381836**, including the initial probe.
+The original pilot cost remains unknown.
+
+Read [the final trade-off report](submission/TicketRoute_Tradeoff_Report.md),
+[independent audit](analysis/FINAL_RESULTS_REVIEW_2026-09-28.md), and
+[demo guide](DEMO_GUIDE.md). The final report has 1,024 words including headings,
+table and sources. Recording, instructor access and portal submission remain
+to be completed. Completed evidence is bundled under `results/`; no API key is
+needed to inspect it or open the replay demo.
+
+### Historical pilot
+
 The preserved 23 August pilot contains 100 validation queries: accuracy **87%**,
 historical observed-label macro-F1 **0.8611**, and 48 true intents represented.
 At threshold 0.70, 97 are accepted, 3 deferred, and 11 accepted predictions are
@@ -15,11 +34,15 @@ wrong. This is a pilot, **not the 3,080-query official LLM test**. Actual histor
 API charges are unknown because the original client did not record usage.
 
 Preparation on 27 September restored all 100 cached predictions, passed 27
-offline tests and recomputed the baselines. Full validation and final LLM test
-require the course OpenRouter key. The working UI supports honest historical
+offline tests and recomputed the baselines. The full paid evaluation then ran
+on the student's Mac. The working UI supports honest historical
 replay, a keyword mode and a separately labelled live mode.
 
 ## One starting point
+
+**For this completed project, choose 3 to open the demo.** Keep the same local
+folder. Do not replace it with an older download or restart the paid stages.
+The first-run sequence below describes how the completed evidence was produced.
 
 Download the complete package once and read [START_HERE_CN.md](START_HERE_CN.md).
 The ZIP extracts to `TicketRoute_Start_Here`. Its only Mac launcher is
@@ -129,14 +152,25 @@ on the same split and with the same metric definition.
 | `data/` | Original CSVs with SHA-256 verification |
 | `evidence/pilot_2026-08-23/` | Untouched completed pilot CSV and JSON |
 | `results/` | Earlier iteration evidence and newly generated evaluation |
-| `submission/` | Draft report, word count and generated error analysis |
+| `submission/` | Final report, archived automatic draft, word counts and error analysis |
 | `tests/` | Offline functional and regression tests with synthetic API fixtures |
 
 `results/llm_openai_gpt-5-mini_validation_100.json` and the unversioned old cache
 are the earlier v1 experiment. They must not be mistaken for v3 or final-test
 results. The authoritative v3 pilot is under `evidence/pilot_2026-08-23/`.
 `analysis/pilot_error_analysis.ipynb` is retained as historical development work.
-Read `analysis/CURRENT_ERROR_ANALYSIS.md` for the current pilot interpretation.
+Read `analysis/CURRENT_ERROR_ANALYSIS.md` for the full-test interpretation.
+
+To independently recalculate the final metrics without a key, export a local
+handback and audit it. These commands use saved evidence and make no API calls:
+
+```text
+python3 scripts/finalise_outputs.py
+python3 analysis/review_final_results.py TicketRoute_Results.zip
+```
+
+The first command regenerates the automatic `DRAFT` files and result ZIP. The
+reviewed final report `submission/TicketRoute_Tradeoff_Report.md` is separate.
 
 The independent repository is [https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute](https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute). It was created as a private
 repository on 27 September 2026. Confirm instructor access before submission.

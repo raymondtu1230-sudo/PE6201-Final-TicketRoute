@@ -1,0 +1,84 @@
+{
+  "n": 3080,
+  "accuracy": 0.8522727272727273,
+  "macro_f1": 0.8489311281584283,
+  "metric_label_count": 77,
+  "truth_label_count": 77,
+  "abstention": {
+    "threshold": 0.6,
+    "answered_count": 3049,
+    "abstained_count": 31,
+    "coverage": 0.9899350649350649,
+    "abstention_rate": 0.010064935064935065,
+    "answered_accuracy": 0.8570022958346999,
+    "abstained_would_be_error_rate": 0.6129032258064516
+  },
+  "top_confusions": [
+    {
+      "true": "direct_debit_payment_not_recognised",
+      "predicted": "card_payment_not_recognised",
+      "count": 17
+    },
+    {
+      "true": "declined_transfer",
+      "predicted": "declined_card_payment",
+      "count": 12
+    },
+    {
+      "true": "pending_transfer",
+      "predicted": "transfer_timing",
+      "count": 12
+    },
+    {
+      "true": "beneficiary_not_allowed",
+      "predicted": "failed_transfer",
+      "count": 12
+    },
+    {
+      "true": "top_up_by_bank_transfer_charge",
+      "predicted": "transfer_fee_charged",
+      "count": 11
+    },
+    {
+      "true": "topping_up_by_card",
+      "predicted": "receiving_money",
+      "count": 11
+    },
+    {
+      "true": "compromised_card",
+      "predicted": "card_payment_not_recognised",
+      "count": 11
+    },
+    {
+      "true": "fiat_currency_support",
+      "predicted": "exchange_via_app",
+      "count": 8
+    },
+    {
+      "true": "top_up_by_bank_transfer_charge",
+      "predicted": "transfer_into_account",
+      "count": 8
+    },
+    {
+      "true": "country_support",
+      "predicted": "order_physical_card",
+      "count": 8
+    }
+  ],
+  "model": "openai/gpt-5-mini",
+  "prompt_version": "contrastive_taxonomy_v3",
+  "model_output_failures": 0,
+  "legacy_usage_missing_rows": 0,
+  "latency_ms_median": 2190.0,
+  "latency_ms_p95": 3696.0,
+  "new_call_ledger": {
+    "attempts": 4976,
+    "known_cost_attempts": 4976,
+    "unknown_cost_attempts": 0,
+    "known_cost_usd": "2.38183600",
+    "budget_usd": "7.00"
+  },
+  "split": "test",
+  "configuration_sha256": "28bcff94953aac98824974fbc288bdda9f51616e4df9b1f51ceb5c0131d64650",
+  "generated_utc": "2026-09-27T17:33:02.360797+00:00"
+}

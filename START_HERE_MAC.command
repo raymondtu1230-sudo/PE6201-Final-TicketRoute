@@ -20,7 +20,7 @@ if [ "$#" -eq 0 ]; then
   echo "2  费用结果核对后：继续完整评估（累计程序停线 US\$7）"
   echo "3  完整结果核对后：打开本地演示（默认使用已有结果）"
   echo
-  read -r -p "第一次请输入 1，再按回车 [默认 1]: " choice
+  read -r -p "请输入 1、2 或 3（首次检查选 1，继续评估选 2，演示选 3）[默认 1]: " choice
   choice="${choice:-1}"
 elif [ "$#" -eq 1 ]; then
   case "$1" in
