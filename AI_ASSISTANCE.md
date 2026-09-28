@@ -1,7 +1,9 @@
 # AI assistance and responsibility
 
 AI assistance was used to review the preserved project, extend evaluation and
-billing checks, prepare tests, and draft documentation and report text. The
+billing checks, prepare tests, and draft documentation and report text. AI assistance also supported
+subtitle preparation and video editing. The demo uses the student's original
+screen recordings and recorded voice; no synthetic voice is used. The
 student should review the final outputs, understand the design choices and
 verify the reported results before submitting and presenting.
 

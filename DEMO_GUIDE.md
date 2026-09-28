@@ -1,49 +1,45 @@
-# TicketRoute final demo guide
+# TicketRoute recorded demo
 
-This is the PE6201 individual Final Project. Suggested duration is about four minutes. No fixed video length was located in the available Final Project materials. Use the student's existing completed project folder.
+PE6201 individual Final Project — Tu Weikang, Section C.
 
-## Preparation
+The submission package contains `02_Demo/TicketRoute_Final_Project_Demo.mp4`,
+approximately 3 minutes 21 seconds, with burned-in English subtitles. It joins
+the student's two original local screen recordings in their original order.
+Screen playback speed is adjusted to follow the narration. The full original
+screen area, clicks, scrolling, document view and GitHub view are retained;
+there are no recreated interface screens, added title panels or editorial
+freeze frames. The student's own recorded voice is used, with quiet pauses
+shortened and volume normalized. No cloned or synthetic voice is used.
 
-Open `START_HERE_MAC.command` and enter `3`, even if the older local prompt still says to enter 1 for the first run. Open `http://127.0.0.1:8765` if the browser does not launch automatically. Keep the terminal open. Replay and keyword modes make no paid calls. Have the final report and independent GitHub README open in separate tabs. Do not expose the API key field.
+The final narration is in
+[`submission/TicketRoute_Read_Aloud_EN.txt`](submission/TicketRoute_Read_Aloud_EN.txt).
+The portable captions are in
+[`submission/TicketRoute_Demo_EN.srt`](submission/TicketRoute_Demo_EN.srt).
+The MP4 already displays the captions, so a separate subtitle file is optional.
 
-## 1 Introduce the project
+## Evidence shown
 
-Screen: Route one query page, with the project title visible.
+1. TicketRoute purpose, input and keyword baseline.
+2. Three saved pilot responses: correct route, human review, confident error.
+3. Evaluation evidence, then the final report's results, limitations and cost.
+4. Scope and safeguards, then the independent GitHub repository.
 
-“My individual Final Project is TicketRoute. It helps a bank support supervisor suggest a queue for an English customer message. The scope is one of 77 banking intents, or human review. It does not answer customers or access their accounts. At an assumed fifteen seconds per message, manually sorting a thousand messages takes about four hours. This is a planning assumption. I have not measured actual staff savings.”
+The three replay examples preserve the historical 0.70 rule and do not make
+new model calls. The completed evaluation uses the validation-frozen 0.60 rule
+and all 3,080 official test rows. Large pilot cards on the evidence page are
+historical; final scores appear in the official-test sentence and final report.
 
-## 2 Show the baseline and real saved examples
+## Reopen the local demo
 
-Screen: Select `Keyword rule · no AI` under Run mode, then click `Classify query`. Next click the `clear route`, `human review` and `confident error` links, allowing time to read each result.
+Use `START_HERE_MAC.command`, choose **3**, and leave the Terminal window open.
+Alternatively, run `python3 app.py --open-browser` from this project directory.
+Open `http://127.0.0.1:8765` if needed. Recorded replay and keyword modes need
+no API key. The evaluation is complete; do not restart paid stages for viewing.
 
-“The keyword mode is a simple comparator using words in intent names. For the model, I built the interface and evaluation code, and rented GPT-5 mini through OpenRouter. A fixed classification task does not need an agent or retrieval system.
+## Submission status
 
-“These three examples replay real calls from the earlier pilot. They are saved responses, not fresh model calls. The replay reproduces the original threshold of 0.70. The first example is a correct route, the next requires review, and the third demonstrates a confident error. Confidence can help flag ambiguity, but a high score does not guarantee a correct answer.”
-
-## 3 Explain the full evaluation
-
-Screen: Open `Evaluation evidence`, then the final report's Results and error analysis section. The page's large pilot figures are historical. Use the official-test sentence and final-report table for final scores.
-
-“The complete evaluation uses 1,998 validation queries followed by 3,080 official test queries. Validation selected the final threshold of 0.60. I froze that rule before the official test and did not tune it using test errors.
-
-“The final macro-F1 is 0.8489, meeting the proposed target of 0.80. Accuracy is 85.23 percent, compared with 38.08 percent for the keyword baseline. A stricter test subset excluding repeated texts and training overlaps gives almost the same result.
-
-“The review rule defers 31 queries. Nineteen would have been wrong, but 436 errors still pass the threshold. This limits the case for autonomous routing. The largest confusion is between unrecognised direct-debit and card payments.”
-
-## 4 Explain cost and limits
-
-Screen: Final report's Cost latency and reliability section, then `Scope & safeguards` in the app.
-
-“The 4,976 new API calls cost 2.38 US dollars, including the initial cost check. Earlier pilot charges were not recorded. Prompt caching kept the measured cost low, so isolated requests may cost more. Median test latency was 2.19 seconds.
-
-“The program records charges, saves predictions and stops on service errors or unknown billing. Fixed labels, structured outputs and a review decision are implemented. PII masking, production access controls, drift monitoring and random audits remain future work. My recommendation is a supervised trial on current tickets, measuring corrected routes and staff time.”
-
-## 5 Show reproducibility
-
-Screen: Independent GitHub README, with the official-test results and files visible.
-
-“The repository contains the code, public data, preserved pilot, complete final evidence and commands for checking the results without another model call. AI assistance supported development and drafting. I remain responsible for understanding and explaining the work.”
-
-## Before submission
-
-Read the report and adjust the narration to words you understand. Record your own explanation, with readable screens and audible speech. Play back the recording once. Keep historical replay separate from new live calls. Confirm that the instructor can access both the private GitHub repository and the recording. Submit through the Final Project route; the recording has not yet been produced or submitted.
+The student still needs to review the final playback, confirm instructor access
+to this private repository and any hosted video, and submit through the
+individual Final Project portal. No school submission has been made by this
+preparation process. The available Final Project documents did not specify a
+video duration limit; the unrelated AR/A2 video rule is not used here.

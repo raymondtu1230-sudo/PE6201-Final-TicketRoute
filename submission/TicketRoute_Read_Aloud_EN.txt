@@ -1,0 +1,17 @@
+Hello, I’m Tu Weikang, and this is my individual Final Project, TicketRoute. It helps bank support staff sort English customer messages into seventy-seven categories, with an option for human review. It suggests a category without answering customers or accessing their accounts.
+
+The problem is that manual sorting takes time. If each message takes fifteen seconds, a thousand messages would take about four hours. This is an assumption, not a measured saving. I built the interface and evaluation code in Python and used GPT-five mini through OpenRouter. A single model call handles classification, while rules check the output and flag cases for review. I also tested a simple keyword baseline.
+
+Let me show you three examples: a correct result, a case flagged for review, and a confident mistake. These replay saved responses from the earlier pilot, using its original seventy-percent threshold. No new model calls happen here.
+
+After the pilot, I completed the full evaluation using the public BANKING77 dataset. This included about two thousand validation queries, followed by three thousand and eighty official test queries. Validation selected a sixty-percent threshold, and I kept it unchanged for the official test.
+
+On the official test, the macro F-one score was zero point eight four eight nine, above my target of zero point eight. Accuracy reached eighty-five point two three percent, compared with thirty-eight point zero eight percent for the keyword baseline.
+
+Still, the review rule has limits. It flagged thirty-one cases, including nineteen incorrect predictions. But four hundred and thirty-six mistakes still passed the threshold. So a high confidence score does not guarantee a correct answer.
+
+I also tracked cost and response time. New API calls cost two US dollars and thirty-eight cents, helped by prompt caching. The earlier pilot’s cost was not recorded. Median test latency was about two point two seconds.
+
+The program saves results, records charges, and stops on service errors or unknown billing. However, privacy controls and ongoing monitoring need further work. My next step would be a supervised trial before operational use.
+
+The code, data, and evaluation evidence are in my GitHub repository. AI tools helped with coding and drafting, and I remain responsible for understanding and explaining the work. Thank you for watching.

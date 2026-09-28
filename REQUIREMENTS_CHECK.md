@@ -22,18 +22,19 @@ are not used for this check.
 | Runs on another person's machine | Full workflow ran on the student's Mac; bundled data and Python 3.10+ | Demonstrated locally; instructor access remains to check |
 | Working GitHub repository | Independent private repository: https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute | Complete source and evidence in this repository; instructor access still needs confirmation |
 | Trade-off report ≤ 1,200 words | Final report has 1,024 words including title, table and sources | Completed; student review still needed |
-| Recorded demo | Existing replay/keyword UI and final-results narration | Personal recording pending |
+| Recorded demo | Existing replay/keyword UI and final-results narration | Assembled from original recordings and voice; final student playback pending |
 | Proposal milestone | 23 August submission recorded in preserved checkpoint | User's earlier submission record; receipt not reverified |
 | Instructor feedback | Not found in available Final Project materials | Not assumed or invented |
 
 Rubric emphasis from proposal watchouts: problem/significance 15%; business and
 technical trade-offs 25%; implementation/data/evaluation 35%; demo/communication
 25%. No fixed video duration or required video filename was located in these
-Final Project materials. The suggested four-minute walkthrough is a planning
-choice, not an imported AR/A2 rule.
+Final Project materials. The approximately 3 minute 21 second recording is the prepared demo,
+not a duration requirement imported from AR/A2.
 
 Submission is **not yet complete**. Evaluation and the report are complete.
-Personal recording, instructor access and school-portal submission remain.
+The recorded demo is assembled. Final student playback, instructor access
+and school-portal submission remain.
 
 ## Runtime requirement clarification — 27 September 2026
 
