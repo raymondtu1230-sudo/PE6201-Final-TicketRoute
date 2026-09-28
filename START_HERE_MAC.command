@@ -8,7 +8,7 @@ pause_and_exit() {
 }
 
 echo "TicketRoute — PE6201 个人 Final Project"
-echo "统一启动入口 / Single starting point"
+echo "Local application and evaluation"
 echo
 if [ ! -f scripts/run_project.py ] || [ ! -f app.py ]; then
   echo "请先解压整个压缩包，保留这个文件与 app.py 在同一文件夹。"
@@ -16,12 +16,12 @@ if [ ! -f scripts/run_project.py ] || [ ! -f app.py ]; then
 fi
 
 if [ "$#" -eq 0 ]; then
-  echo "1  第一次：小额费用检查（程序停线 US\$0.10）"
-  echo "2  费用结果核对后：继续完整评估（累计程序停线 US\$7）"
-  echo "3  完整结果核对后：打开本地演示（默认使用已有结果）"
+  echo "1  Validation cost probe (local stop: US\$0.10)"
+  echo "2  Run or resume evaluation (cumulative local stop: US\$7)"
+  echo "3  Open the demo using saved results (no charge)"
   echo
-  read -r -p "请输入 1、2 或 3（首次检查选 1，继续评估选 2，演示选 3）[默认 1]: " choice
-  choice="${choice:-1}"
+  read -r -p "Choose 1, 2 or 3 [default 3: recorded demo]: " choice
+  choice="${choice:-3}"
 elif [ "$#" -eq 1 ]; then
   case "$1" in
     --cost-check) choice=1 ;;
@@ -56,7 +56,7 @@ fi
 
 echo "Checking the project before any paid call..."
 if ! python3 -m unittest discover -s tests; then
-  echo "离线检查未通过。请发回错误截图，先不要输入密钥。"
+  echo "Offline checks failed. See the errors above; no paid call was made."
   pause_and_exit 1
 fi
 
@@ -74,8 +74,8 @@ if [ "$choice" = 1 ]; then
   python3 scripts/run_project.py --prompt-for-key --stage validation --budget-usd 0.10
   result_code=$?
   echo
-  echo "这一步出现 STOPPED: Project spending cap reached 是预期检查点。"
-  echo "费用检查完成后，请先交回结果，不要马上选择 2。"
+  echo "The cost probe stops when the local spending limit is reached."
+  echo "Recorded charges are in results/api_attempts.jsonl."
 else
   echo "继续完整评估：--budget-usd 7.00；包含此前费用检查的已记录花费。"
   echo "保留并复用已完成结果；这个程序停线不保证 US\$7 内一定跑完。"
@@ -83,12 +83,12 @@ else
   result_code=$?
   echo
   if [ "$result_code" -eq 0 ]; then
-    echo "完整评估已完成，请交回结果供核对。"
+    echo "Evaluation complete. Results are saved in results/."
   else
-    echo "完整评估已停止，请交回结果检查原因。先不要提高预算或重新运行。"
+    echo "Evaluation stopped. See the error above; completed predictions are saved."
   fi
 fi
-echo "请把此文件夹内的 TicketRoute_Results.zip 上传回当前聊天。"
-echo "如有其他错误，也请发回错误部分截图。若未生成 ZIP，只发错误截图。"
-echo "保留整个文件夹和 results；后续仍使用这个入口。"
+echo "Evaluation archive: TicketRoute_Results.zip"
+echo "Run status: results/run_status.json"
+echo "Existing results and recorded charges are reused when resuming."
 pause_and_exit "$result_code"

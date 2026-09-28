@@ -4,7 +4,7 @@ The fixed v3 prompt was evaluated on all 3,080 official test queries after valid
 
 ## Review policy
 
-The rule accepts 3,049 predictions and defers 31. Of the deferred predictions, 19 would be wrong. However, 436 of the 455 total errors remain accepted. Coverage is 98.99% and accepted accuracy is 85.70%. The rule catches 4.18% of classification errors, so it should not be presented as a strong error detector or a production safety guarantee.
+The rule accepts 3,049 predictions and defers 31. Of the deferred predictions, 19 would be wrong. However, 436 of the 455 total errors remain accepted. Coverage is 98.99% and accepted accuracy is 85.70%. The rule catches only 4.18% of classification errors and provides limited protection against incorrect routes.
 
 ## Recurring boundaries
 

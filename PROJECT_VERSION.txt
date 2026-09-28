@@ -1,8 +1,8 @@
-PE6201 individual Final Project TicketRoute
-Prepared 2026-09-27
-Prompt: contrastive_taxonomy_v3 (unchanged)
+TicketRoute — PE6201 Individual Final Project
+Evaluation completed: 28 September 2026
+Model: openai/gpt-5-mini
+Prompt: contrastive_taxonomy_v3
 Client: v3_audited_io_2026-09-27
-Status: pilot preserved, offline checks complete, full evaluation pending API key
-Package: TicketRoute_Complete_Start_Here.zip
-Entry: START_HERE_MAC.command (1 cost probe, 2 full resume, 3 demo)
-Budget: probe 0.10 USD; full evaluation 7.00 USD cumulative
+Validation rows: 1998
+Official test rows: 3080
+Frozen review threshold: 0.60

@@ -186,11 +186,11 @@ def main():
                 if not key and args.prompt_for_key:
                     key=getpass.getpass('Paste the course OpenRouter key here (hidden; not saved): ').strip()
                 if not key:
-                    raise EvaluationStopped('No API key. Offline preparation is complete. Use START_HERE_MAC.command locally; never send a key in chat.')
+                    raise EvaluationStopped('No API key. Offline preparation is complete. Use --prompt-for-key or set OPENROUTER_API_KEY locally.')
                 print(f'Local spending stop: US${args.budget_usd} for new evaluation attempts. Historical pilot cost is unknown.',flush=True)
                 run_paid(ROOT,key,args.budget_usd,args.stage)
                 state='evaluation_complete' if args.stage!='validation' else 'validation_complete'
-                message='Evaluation evidence saved. Repository publication and the final recorded demo still need verification.'
+                message='Evaluation complete. Results are saved under results/.'
     except (EvaluationStopped,OSError,ValueError) as exc:
         state='stopped'; message=str(exc); code=1
         print(f'\nSTOPPED: {message}',flush=True)
@@ -200,7 +200,7 @@ def main():
         if acquired:
             write_json(ROOT/'results'/'run_status.json',{'state':state,'message':message,'updated_utc':timestamp()})
             export_outputs(ROOT)
-            print('\nSend back TicketRoute_Results.zip from this folder. It contains no API key.',flush=True)
+            print('\nResults exported to TicketRoute_Results.zip. API keys are not included.',flush=True)
     return code
 
 
