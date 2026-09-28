@@ -12,6 +12,8 @@ The intended user is Mei, a digital-bank support supervisor assigning messages t
 
 I built the interface, fixed taxonomy, prompt, review policy and evaluation pipeline in Python, and rented GPT-5 mini through OpenRouter. This avoids model training and hosting within the project period, at the expense of recurring charges, network latency and provider dependence. Python's standard library makes the workflow inspectable and keeps local setup small. A single fixed-label classification does not need an agent or retrieval system.
 
+I skipped low-code because fixed data splits, schema checks and resumable evaluation are easier to audit in Python. My proposal estimated one day for the first slice and under five minutes to launch on a Mac with Python installed. These were planning estimates, not measured deployment results.
+
 Zendesk Intelligent Triage is the commercial alternative identified in my proposal. TicketRoute provides a narrow, reproducible student prototype rather than the integrations and operational support of a commercial platform. A supervised classifier is another credible alternative because labelled data exists. I have not evaluated one, so the results establish an improvement over the implemented keyword and majority baselines, not over every alternative.
 
 The fixed prompt supplies intent definitions and two training-core examples per intent. Structured JSON and label checks constrain the output. The browser provides free historical replay and keyword modes, plus a separately labelled live mode. Replay displays saved model responses and does not represent a fresh inference.
@@ -50,6 +52,8 @@ The runner logs charges, generation IDs and request hashes, saves completed pred
 
 Implemented controls include fixed labels, structured output checks, input length limits, treating query text as untrusted data, and a visible human-review decision. Random review of accepted predictions is a proposed operational control. PII masking, production access controls and drift monitoring remain future work.
 
+I use the OWASP Top 10 for LLM Applications (2025) to frame security risks. Treating input as data provides a partial control for LLM01 prompt injection; schema checks and HTML escaping address parts of LLM05 improper output handling. Adversarial robustness remains unmeasured.
+
 The next step is a supervised trial on current local tickets, measuring corrected routes and actual staff time. Public English benchmark results do not establish multilingual reliability or production readiness. AI assistance supported implementation, checking and drafting. I remain responsible for reviewing and explaining the submitted work.
 
 ## Sources
@@ -57,3 +61,4 @@ The next step is a supervised trial on current local tickets, measuring correcte
 1. Casanueva et al. (2020), Efficient Intent Detection with Dual Sentence Encoders. PolyAI BANKING77 source and licence are pinned in DATA_LICENSE.md.
 2. Preserved 23 August pilot and completed 28 September local evaluation. Row-level predictions, calibration and billing evidence are in results/.
 3. OpenRouter model and usage-accounting documentation, checked 27 September 2026. Source links are in README.md.
+4. OWASP (2025), LLM01 Prompt Injection and LLM05 Improper Output Handling: https://genai.owasp.org/llmrisk/llm01-prompt-injection/ and https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/.

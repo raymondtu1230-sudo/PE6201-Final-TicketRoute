@@ -20,7 +20,7 @@ The original pilot cost remains unknown.
 
 Read [the final trade-off report](submission/TicketRoute_Tradeoff_Report.md),
 [independent audit](analysis/FINAL_RESULTS_REVIEW_2026-09-28.md), and
-[demo guide](DEMO_GUIDE.md). The final report has 1,024 words including headings,
+[demo guide](DEMO_GUIDE.md). The final report has 1,137 words including headings,
 table and sources. The recorded demo has been assembled from the student's
 two original screen recordings and original narration, with English subtitles.
 Final student playback, instructor access and portal submission remain. Completed evidence is bundled under `results/`; no API key is
