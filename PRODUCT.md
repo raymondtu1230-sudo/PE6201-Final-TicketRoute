@@ -106,4 +106,4 @@ appropriately authorised tickets. Privacy masking, access control, drift
 monitoring and sampling of accepted routes remain future work. Implemented
 controls and their limitations are described in the
 [main README](README.md#design-choices-and-limitations) and
-[trade-off report](submission/TicketRoute_Tradeoff_Report.md).
+[trade-off report](https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute/blob/main/submission/TicketRoute_Tradeoff_Report.md).

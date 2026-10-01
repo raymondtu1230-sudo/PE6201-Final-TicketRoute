@@ -8,6 +8,8 @@ TicketRoute suggests one of 77 banking support intents or human review for an En
 
 The intended user is Mei, a digital-bank support supervisor assigning messages to specialist queues. At an assumed 15 seconds per message, manually sorting 1,000 messages takes about 4.2 staff hours. This illustrates the potential value of faster triage; staff savings have not been measured. The prototype classifies messages without answering customers, accessing accounts or taking financial actions.
 
+Any future time-saving estimate must include reading suggestions, correcting errors and reviewing flagged cases. Faster model responses alone do not establish a reduction in staff workload.
+
 ## Business and technical choices
 
 I built the interface, fixed taxonomy, prompt, review policy and evaluation pipeline in Python, and rented GPT-5 mini through OpenRouter. This avoids model training and hosting within the project period, at the expense of recurring charges, network latency and provider dependence. Python's standard library makes the workflow inspectable and keeps local setup small. A single fixed-label classification does not need an agent or retrieval system.
@@ -21,6 +23,8 @@ The fixed prompt supplies intent definitions and two training-core examples per 
 BANKING77 contains 10,003 training and 3,080 official test queries under CC BY 4.0. A deterministic stratified split produces 1,998 validation rows and 8,004 training-core rows after removing one overlapping core row. The 154 prompt examples come only from the core and do not occur in validation or test. The earlier 100-query pilot is preserved and reused within validation.
 
 The primary target is macro-F1 of at least 0.80 across all 77 intents, with equal weight per intent. Baselines use training-core frequencies. Model and prompt settings were frozen before completing validation. Validation selected the lowest threshold from 0.50 to 0.95, in 0.05 increments, attaining at least 85% accuracy among accepted predictions. That project rule selected 0.60. The prompt and threshold were then held fixed for the official LLM test. Test errors were not used to tune either. The keyword-only test result was already available during development.
+
+Macro-F1 gives each intent equal influence, but it also treats misroutes with different business consequences equally. I have no bank-specific error-cost model, so exceeding 0.80 supports benchmark feasibility rather than a claim that the system is operationally safe.
 
 The original dataset has six texts shared between training and test, including one in validation, and repeated texts within splits. I retain every official test row and also report a stricter analysis excluding training-overlap texts and duplicate test texts.
 
@@ -36,6 +40,8 @@ The model correctly classifies 2,625 queries and misses 455. Macro-F1 exceeds th
 
 At the frozen 0.60 threshold, 3,049 test predictions are accepted and 31 require review. Coverage is 98.99% and accepted accuracy is 85.70%. Nineteen of the 31 deferred predictions would have been wrong, a 61.29% would-be error rate. However, 436 errors still remain among accepted predictions. The threshold catches only 19 of 455 classification errors. Self-reported confidence is therefore a weak safeguard at this operating point.
 
+This rule favours coverage. On validation, a 0.95 threshold would increase accepted accuracy to 94.33% but reduce coverage to 60.06%, compared with 98.85% at 0.60. I kept the declared rule for the test. In practice, a bank would need to choose its acceptable error rate and review workload before selecting an operating threshold.
+
 The largest confusion is unrecognised direct-debit payments being labelled as unrecognised card payments, with 17 cases. Other frequent errors concern declined transfers versus card payments, and pending transfers versus transfer timing. Future work should investigate these boundaries on fresh development data and a new holdout, while preserving this completed test result.
 
 ## Cost latency and reliability
@@ -45,6 +51,8 @@ The ledger records 4,976 new API calls costing US$2.381836, including the initia
 The measured average is about US$0.000479 per new call. Approximately 98.0% of input tokens were served from the provider's prompt cache, so this cost should not be assumed for isolated requests with a cold cache. Test latency is 2.19 seconds at the median and 3.696 seconds at the 95th percentile. These are observed response times, not service guarantees.
 
 The runner logs charges, generation IDs and request hashes, saves completed predictions and stops on transport failures or unknown billing. Invalid model outputs count as errors. Its cumulative US$7 stop with a US$0.05 reserve is a software control, not a provider account cap. Final reports can be independently audited without further model calls.
+
+A practical challenge was preserving partial progress without losing cost evidence. Separating cached predictions from the attempt ledger made resumption auditable, while leaving missing historical charges explicitly unknown.
 
 ## Responsible use and next decision
 

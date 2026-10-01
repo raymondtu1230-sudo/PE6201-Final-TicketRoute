@@ -1,1 +1,1 @@
-1024 words including title, author, headings, table and sources. Limit: 1200.
+1175 words including title, author, headings, table and sources. Count treats decimal and comma-separated numeric components as separate words. Whitespace-based count: 1129. Limit: 1200.
