@@ -205,7 +205,16 @@ def main():
         state='interrupted'; message='Stopped by the user. Completed predictions were preserved.'; code=1
     finally:
         if acquired:
-            write_json(ROOT/'results'/'run_status.json',{'state':state,'message':message,'updated_utc':timestamp()})
+            status_path = ROOT / 'results' / 'run_status.json'
+            preserve_completed = False
+            if args.offline and code == 0 and status_path.exists():
+                try:
+                    preserve_completed = json.loads(status_path.read_text(encoding='utf-8')).get('state') == 'evaluation_complete'
+                except (OSError, ValueError, AttributeError):
+                    pass
+            # Successful offline checks must preserve the completed run and its timestamp.
+            if not preserve_completed:
+                write_json(status_path,{'state':state,'message':message,'updated_utc':timestamp()})
             export_outputs(ROOT)
             print('\nResults exported to TicketRoute_Results.zip. API keys are not included.',flush=True)
     return code
