@@ -1,4 +1,9 @@
-"""Compact, training-grounded meanings for the exact BANKING77 labels."""
+"""Define the 77 intent meanings used by the fixed classification prompt.
+
+Keys retain the dataset's exact label spelling; short descriptions distinguish
+neighbouring banking intents. This lookup is combined with training examples
+by openrouter_client.py and is not changed from official-test feedback.
+"""
 
 from __future__ import annotations
 

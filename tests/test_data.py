@@ -1,3 +1,9 @@
+"""Verify source hashes, row counts, label coverage and split/example separation.
+
+Checks use the bundled BANKING77 files and deterministic preparation functions;
+no model-generated labels or paid requests are involved.
+"""
+
 import unittest
 from collections import Counter
 from pathlib import Path

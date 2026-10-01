@@ -1,4 +1,11 @@
-"""Sequential, resumable evaluation with explicit model failures and cost evidence."""
+"""Evaluate labelled rows using resumable response caches and a cost ledger.
+
+The caller supplies a classification function, allowing real API calls in the
+runner and synthetic clients in software tests. Cached model, prompt, label
+and confidence values are checked before reuse. Invalid model outputs remain
+scored failures; transport or unknown-billing errors stop progress. Reports
+and CSV exports preserve row-level predictions and available response metadata.
+"""
 from __future__ import annotations
 import csv
 import hashlib

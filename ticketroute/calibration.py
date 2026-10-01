@@ -1,4 +1,10 @@
-"""The CLI and browser share the same frozen validation decision rule."""
+"""Load the frozen validation decision rule for both CLI and browser use.
+
+The saved model, prompt version, validation size and configuration hash must
+match the completed experiment. A missing calibration can expose the earlier
+pilot rule only when full calibration is not required. A null threshold means
+all queries require review, rather than silently falling back to a number.
+"""
 from __future__ import annotations
 import json
 import math

@@ -1,4 +1,10 @@
-"""Transparent non-AI keyword-overlap baseline."""
+"""Provide the deterministic non-AI routing baseline.
+
+Query tokens are compared with literal intent-name tokens. Training-label
+frequencies resolve ties and supply a majority fallback. The evaluated runner
+passes only training-core rows, keeping validation and test labels out of
+these frequencies. This module has no external service dependency.
+"""
 
 from __future__ import annotations
 
@@ -84,4 +90,3 @@ class KeywordBaseline:
 
     def predict_many(self, queries: Iterable[str]) -> list[str]:
         return [self.predict(query) for query in queries]
-

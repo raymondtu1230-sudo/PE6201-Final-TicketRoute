@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Evaluate the keyword baseline or GPT-5 mini on BANKING77."""
+"""Keep the earlier evaluation CLI compatible with the audited workflow.
+
+Argument and threshold helpers support the existing tests and launch scripts.
+The main entry point delegates paid execution to run_project.py so it shares
+the configuration locks, response cache and cumulative billing controls.
+"""
 
 from __future__ import annotations
 

@@ -1,4 +1,11 @@
-"""Dependency-free local browser interface for TicketRoute."""
+"""Serve the local routing demo and saved evaluation evidence.
+
+The three modes are historical pilot replay, a keyword rule, and an explicit
+paid OpenRouter call. Live predictions use the frozen validation threshold;
+replay keeps the pilot's original rule. The server validates inputs, escapes
+displayed text and uses a separate live-call ledger. It suggests routes but
+does not connect to customer accounts or a ticketing system.
+"""
 
 from __future__ import annotations
 

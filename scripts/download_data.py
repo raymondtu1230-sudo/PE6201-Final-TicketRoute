@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Download and verify BANKING77 data."""
+"""Prepare the two pinned BANKING77 CSV files in the project's data directory.
+
+This command delegates downloading and source verification to ticketroute.data
+and reports the loaded row counts. It makes no model calls.
+"""
 
 from pathlib import Path
 import sys
@@ -20,4 +24,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

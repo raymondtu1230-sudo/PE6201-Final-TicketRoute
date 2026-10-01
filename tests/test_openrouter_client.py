@@ -1,3 +1,9 @@
+"""Check structured-output validation and supported OpenRouter response shapes.
+
+Mock HTTP responses cover valid predictions, unknown labels and truncation.
+These tests make no external requests and are not measured model performance.
+"""
+
 import unittest
 from unittest.mock import patch
 import json

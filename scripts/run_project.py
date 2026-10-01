@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""One-command Final Project workflow. Paid calls are sequential and resumable."""
+"""Run the frozen validation-then-test evaluation and export its evidence.
+
+Preparation verifies the pilot, data split, prompt and baseline comparisons.
+Paid execution uses an exclusive run lock, sequential cached predictions and
+a cumulative cost ledger. Validation selects the threshold before the test
+lock is written. The offline option prepares local evidence without model
+calls; completed runs retain the recorded configuration and decision rule.
+"""
 from __future__ import annotations
 import argparse
 from collections import Counter

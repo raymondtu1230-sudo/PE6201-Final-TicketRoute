@@ -1,3 +1,9 @@
+"""Check threshold loading and safe reuse of versioned prediction caches.
+
+Temporary fixtures exercise model/prompt mismatch handling and confirm that
+resumption calls a synthetic client only for uncached rows.
+"""
+
 import json
 from pathlib import Path
 import tempfile

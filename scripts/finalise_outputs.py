@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Export per-intent scores, error tables and an archive of evaluation evidence."""
+"""Export saved predictions as per-intent/error tables and an evidence ZIP.
+
+This offline command reads completed CSVs, writes analysis tables under
+submission/, and archives allow-listed evidence with a SHA-256 manifest.
+It makes no model calls and does not generate or replace the trade-off report.
+"""
 from __future__ import annotations
 import csv
 import hashlib

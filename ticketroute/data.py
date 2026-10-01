@@ -1,4 +1,11 @@
-"""BANKING77 download, integrity checking, and CSV loading."""
+"""Load the pinned BANKING77 source files with integrity checks.
+
+Missing CSVs can be downloaded from the fixed upstream commit. Bundled files
+are checked against expected SHA-256 hashes, row counts and field structure.
+Source files stay unchanged; loaded text/category fields have surrounding
+whitespace stripped. Splitting and prompt-example selection are handled
+separately by prompting.py.
+"""
 
 from __future__ import annotations
 
@@ -99,4 +106,3 @@ def get_labels(rows: Iterable[dict[str, str]]) -> list[str]:
     if len(labels) != 77:
         raise DataIntegrityError(f"Expected 77 labels, found {len(labels)}")
     return labels
-

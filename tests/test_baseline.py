@@ -1,3 +1,8 @@
+"""Check reproducibility of the local keyword baseline on bundled BANKING77 data.
+
+This test makes no model calls and does not replace the saved baseline report.
+"""
+
 import unittest
 from pathlib import Path
 
@@ -19,4 +24,3 @@ class BaselineTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

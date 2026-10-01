@@ -1,3 +1,8 @@
+"""Check classification and abstention arithmetic on small hand-checkable examples.
+
+The fixture is a unit test, separate from the saved benchmark evaluation.
+"""
+
 import unittest
 
 from ticketroute.metrics import abstention_metrics, classification_metrics
@@ -18,4 +23,3 @@ class MetricsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

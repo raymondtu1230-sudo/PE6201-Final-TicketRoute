@@ -1,4 +1,11 @@
-"""Local attempt ledger, conservative budget guard, and immutable evaluation lock."""
+"""Persist attempt costs and freeze the evaluation configuration.
+
+AttemptLedger uses decimal arithmetic, checks a local reserve before calls,
+and blocks further spending when earlier billing is unknown. JSON writers
+store the ledger and configuration evidence under results/. Configuration
+hashes protect the prompt, data and selection policy from accidental changes
+within a completed experiment; the budget is not a provider account limit.
+"""
 from __future__ import annotations
 from datetime import datetime, timezone
 from decimal import Decimal

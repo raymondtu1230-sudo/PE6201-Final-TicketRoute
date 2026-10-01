@@ -1,4 +1,11 @@
-"""Deterministic validation split and contrastive benchmark examples."""
+"""Construct the reproducible validation split and few-shot example set.
+
+The seeded stratified split preserves historical validation ordering and
+removes core rows whose text also occurs in validation. A deterministic
+ranking then chooses two distinct core examples per intent. This module does
+not fit model weights; the runner checks selected examples against held-out
+texts before freezing the prompt.
+"""
 
 from __future__ import annotations
 

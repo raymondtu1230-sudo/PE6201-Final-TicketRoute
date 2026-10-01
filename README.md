@@ -24,6 +24,15 @@ requires an OpenRouter key and makes a paid call. Replay examples come from the
 August pilot and retain its 0.70 review threshold. The completed evaluation uses
 a threshold of 0.60, selected on validation before the official test.
 
+## Documentation
+
+| Guide | Contents |
+| --- | --- |
+| [Product documentation](PRODUCT.md) | Persona, input/output, architecture diagram, build/buy choices and target versus achieved metrics. |
+| [Data guide](data/README.md) | Source, licence, fields, split construction, duplicates and integrity checks. |
+| [Evaluation guide](results/README.md) | Evaluation sequence, metric definitions, evidence files, billing and offline reproduction. |
+| [Trade-off report](submission/TicketRoute_Tradeoff_Report.md) | Reasoning, results, limitations and next steps. |
+
 ## Results
 
 Evaluation completed on 28 September 2026: 1,998 validation queries followed by
@@ -119,8 +128,8 @@ Live calls from the browser have a separate US$1 local stop and ledger.
 The submission package includes the report in Word and PDF under `01_Report/`,
 the recorded demo and English captions under `02_Demo/`, and the original
 problem statement under `03_Problem_Statement/`. The report contains 1,024 words
-including headings, table and sources. The demo is approximately 3 minutes
-21 seconds. AI use is described in [AI_ASSISTANCE.md](AI_ASSISTANCE.md).
+including headings, table and sources. AI use is described in
+[AI_ASSISTANCE.md](AI_ASSISTANCE.md).
 
 The older files `results/llm_openai_gpt-5-mini_validation_100.json` and
 `results/cache_openai_gpt-5-mini_validation.jsonl` belong to the earlier v1

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Verify the preserved pilot and import only the 25 missing cached predictions."""
+"""Verify and restore the 100 recorded v3 pilot predictions without API calls.
+
+Source hashes protect the original CSV and report. The restoration checks row
+order and labels against the deterministic validation split, imports missing
+cache entries idempotently, and records that historical billing is unknown.
+"""
 from __future__ import annotations
 import csv
 import hashlib

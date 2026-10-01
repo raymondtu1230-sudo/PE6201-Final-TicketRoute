@@ -1,4 +1,11 @@
-"""Minimal OpenRouter client using only the Python standard library."""
+"""Build one structured classification request and validate its response.
+
+The prompt combines the fixed BANKING77 taxonomy with training-core examples
+and a customer query treated as untrusted data. The client checks labels,
+confidence, reason and response shape, and retains usage, latency and request
+metadata. Missing billing remains unknown. API credentials stay in memory;
+the caller owns caching, spending checks and the final review threshold.
+"""
 
 from __future__ import annotations
 

@@ -1,3 +1,10 @@
+"""Check evaluation locks, failure accounting, billing stops and cached resumption.
+
+Temporary project copies and synthetic classification clients exercise the
+full workflow without paid calls. These fixtures test software behaviour and
+never contribute to the submitted benchmark scores.
+"""
+
 import json
 from pathlib import Path
 import shutil

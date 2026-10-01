@@ -1,4 +1,10 @@
-"""Evaluation helpers for classification and abstention."""
+"""Compute classification, review and confusion metrics without external packages.
+
+The final runner supplies all 77 labels for macro-F1; historical callers can
+instead use observed labels. Review metrics score the best intent before any
+human correction. Threshold selection returns the lowest candidate meeting
+the validation accuracy target, or None when every row should be deferred.
+"""
 
 from __future__ import annotations
 

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Audit a completed TicketRoute handback without network access or model calls."""
+"""Independently audit an exported TicketRoute evidence archive offline.
+
+The checker reconstructs row-level metrics, threshold selection, prompt and
+request hashes, then reconciles caches, CSVs and billing. It also verifies the
+preserved pilot and test sensitivity analysis. The input is the results ZIP;
+the output is a JSON audit summary, with no network access or model calls.
+"""
 from __future__ import annotations
 import argparse
 from collections import Counter
