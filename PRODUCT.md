@@ -96,13 +96,32 @@ original targets and selection rule are retained in
 | Staff time saved | Proposed operational benefit | Not measured. |
 
 The main metric target was met, but the review rule catches only 19 of 455 test
-errors. This supports a supervised trial, not autonomous deployment. Frequent
+errors, or 4.18%. Although 61.29% of deferred predictions would be wrong, this
+concentration is different from catching most errors. This supports a supervised
+trial, not autonomous deployment. Frequent
 errors involve neighbouring intents, especially unrecognised direct-debit and
 card payments. Public benchmark performance does not establish performance on
 current local tickets. The measured cost also benefited from prompt caching.
 
-The next trial should measure corrected routes and actual staff time using
-appropriately authorised tickets. Privacy masking, access control, drift
+The existing validation results show how accuracy and review workload interact:
+
+| Validation threshold | Review rate | Accepted accuracy |
+| --- | --- | --- |
+| 0.60 | 1.15% | 85.06% |
+| 0.90 | 11.41% | 88.93% |
+| 0.95 | 39.94% | 94.33% |
+
+These alternatives were not adopted for the official test, which retained 0.60.
+The 85% selection criterion is a project choice, not a bank's agreed tolerance
+for misrouting. A future operator would need to weigh error consequences against
+review capacity. Aggregate scores also hide weak queues: bank-transfer top-up
+charges have test F1 of 0.4231. See the saved
+[per-intent scores](submission/test_per_intent.csv) and
+[threshold evidence](results/calibrated_threshold.json).
+
+The next trial should measure corrected routes, missed errors, review workload
+and actual staff time against manual sorting using appropriately authorised
+tickets. Privacy masking, access control, drift
 monitoring and sampling of accepted routes remain future work. Implemented
 controls and their limitations are described in the
 [main README](README.md#design-choices-and-limitations) and

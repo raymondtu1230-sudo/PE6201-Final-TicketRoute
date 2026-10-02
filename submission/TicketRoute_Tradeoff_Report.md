@@ -1,6 +1,6 @@
 # TicketRoute Tradeoff Report
 
-Tu Weikang | PE6201 Individual Final Project | 28 September 2026
+Tu Weikang | PE6201 Individual Final Project | 2 October 2026
 
 ## Problem and intended value
 
@@ -8,7 +8,7 @@ TicketRoute suggests one of 77 banking support intents or human review for an En
 
 The intended user is Mei, a digital-bank support supervisor assigning messages to specialist queues. At an assumed 15 seconds per message, manually sorting 1,000 messages takes about 4.2 staff hours. This illustrates the potential value of faster triage; staff savings have not been measured. The prototype classifies messages without answering customers, accessing accounts or taking financial actions.
 
-Any future time-saving estimate must include reading suggestions, correcting errors and reviewing flagged cases. Faster model responses alone do not establish a reduction in staff workload.
+The operational benefit depends on reading suggestions, correcting errors and reviewing flagged cases taking less time than manual sorting. Faster model responses alone do not establish staff savings.
 
 ## Business and technical choices
 
@@ -24,7 +24,7 @@ BANKING77 contains 10,003 training and 3,080 official test queries under CC BY 4
 
 The primary target is macro-F1 of at least 0.80 across all 77 intents, with equal weight per intent. Baselines use training-core frequencies. Model and prompt settings were frozen before completing validation. Validation selected the lowest threshold from 0.50 to 0.95, in 0.05 increments, attaining at least 85% accuracy among accepted predictions. That project rule selected 0.60. The prompt and threshold were then held fixed for the official LLM test. Test errors were not used to tune either. The keyword-only test result was already available during development.
 
-Macro-F1 gives each intent equal influence, but it also treats misroutes with different business consequences equally. I have no bank-specific error-cost model, so exceeding 0.80 supports benchmark feasibility rather than a claim that the system is operationally safe.
+Macro-F1 gives each intent equal influence, but misroutes have different business consequences. Each test intent has 40 examples; actual ticket frequencies and error costs may differ. Without a bank-specific error-cost model, exceeding 0.80 establishes benchmark feasibility rather than operational safety.
 
 The original dataset has six texts shared between training and test, including one in validation, and repeated texts within splits. I retain every official test row and also report a stricter analysis excluding training-overlap texts and duplicate test texts.
 
@@ -38,11 +38,19 @@ The original dataset has six texts shared between training and test, including o
 
 The model correctly classifies 2,625 queries and misses 455. Macro-F1 exceeds the 0.80 target. On the stricter 3,073-query subset, macro-F1 is 0.8490 and accuracy is 85.23%, so the disclosed overlaps do not materially change this conclusion. There were no recorded model-output failures.
 
-At the frozen 0.60 threshold, 3,049 test predictions are accepted and 31 require review. Coverage is 98.99% and accepted accuracy is 85.70%. Nineteen of the 31 deferred predictions would have been wrong, a 61.29% would-be error rate. However, 436 errors still remain among accepted predictions. The threshold catches only 19 of 455 classification errors. Self-reported confidence is therefore a weak safeguard at this operating point.
+At the frozen 0.60 threshold, 3,049 test predictions are accepted and 31 require review. Coverage is 98.99% and accepted accuracy is 85.70%. Nineteen deferred predictions would have been wrong, a 61.29% would-be error rate. This is review precision, not error capture: only 19 of 455 errors are deferred, or 4.18%, while 436 still pass. Self-reported confidence offers limited protection at this operating point.
 
-This rule favours coverage. On validation, a 0.95 threshold would increase accepted accuracy to 94.33% but reduce coverage to 60.06%, compared with 98.85% at 0.60. I kept the declared rule for the test. In practice, a bank would need to choose its acceptable error rate and review workload before selecting an operating threshold.
+The saved validation results show the workload trade-off:
 
-The largest confusion is unrecognised direct-debit payments being labelled as unrecognised card payments, with 17 cases. Other frequent errors concern declined transfers versus card payments, and pending transfers versus transfer timing. Future work should investigate these boundaries on fresh development data and a new holdout, while preserving this completed test result.
+| Validation threshold | Review rate | Accepted accuracy |
+| --- | --- | --- |
+| 0.60 | 1.15% | 85.06% |
+| 0.90 | 11.41% | 88.93% |
+| 0.95 | 39.94% | 94.33% |
+
+At 0.95, almost four in ten validation cases need review. I retained 0.60 for the test because it followed the declared selection rule. The 85% criterion is a project choice; a bank must weigh acceptable misroutes against review capacity before adopting a threshold. These alternatives are validation analysis, not new test operating points.
+
+The largest confusion is unrecognised direct-debit payments being labelled as unrecognised card payments, with 17 cases. Bank-transfer top-up charges have F1 of only 0.4231, showing that the aggregate score hides weak queues. The query in the recorded pilot mistake omits the transaction channel: sufficient funds alone cannot distinguish a declined card payment from an ATM withdrawal. I would investigate these boundaries on fresh development data and a new holdout, preserving this completed test.
 
 ## Cost latency and reliability
 
@@ -58,7 +66,7 @@ A practical challenge was preserving partial progress without losing cost eviden
 
 Implemented controls include fixed labels, structured output checks, input length limits, treating query text as untrusted data, and a visible human-review decision. Random review of accepted predictions is a proposed operational control. PII masking, production access controls and drift monitoring remain future work.
 
-The next step is a supervised trial on current local tickets, measuring corrected routes and actual staff time. Public English benchmark results do not establish multilingual reliability or production readiness. AI assistance supported implementation, checking and drafting. I remain responsible for reviewing and explaining the submitted work.
+The next step is a supervised trial on current local tickets, measuring corrected routes, missed errors, review workload and staff time against manual sorting. Net time savings and an acceptable error rate would justify progression. Public English benchmark results do not establish multilingual reliability or production readiness. AI assistance supported implementation, checking and drafting. I remain responsible for reviewing and explaining the submitted work.
 
 ## Sources
 

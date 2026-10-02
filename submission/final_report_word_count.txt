@@ -1,1 +1,3 @@
-1175 words including title, author, headings, table and sources. Count treats decimal and comma-separated numeric components as separate words. Whitespace-based count: 1129. Limit: 1200.
+1193 words by whitespace-based count, including title, author, date, headings, both tables and sources.
+Alternative count: 1247 words, splitting decimal and comma-separated numeric components.
+Teacher target: approximately 1,200 words, with 10-15% variation allowed.

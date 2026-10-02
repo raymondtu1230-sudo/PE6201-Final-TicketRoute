@@ -33,6 +33,10 @@ a threshold of 0.60, selected on validation before the official test.
 | [Evaluation guide](results/README.md) | Evaluation sequence, metric definitions, evidence files, billing and offline reproduction. |
 | [Trade-off report](https://github.com/raymondtu1230-sudo/PE6201-Final-TicketRoute/blob/main/submission/TicketRoute_Tradeoff_Report.md) | Reasoning, results, limitations and next steps. |
 
+For a quick review, read the report and product documentation, run the recorded
+examples, then use the data and evaluation guides to inspect the evidence.
+The independent audit below reproduces the main results locally.
+
 ## Results
 
 Evaluation completed on 28 September 2026: 1,998 validation queries followed by
@@ -46,9 +50,15 @@ validation, and test outcomes were not used to tune the prompt or threshold.
 | GPT-5 mini | 0.8489 | 85.23% |
 
 The model correctly classifies 2,625 test queries. The review rule defers 31
-predictions, of which 19 would be wrong. Another 436 errors remain among the
-3,049 accepted predictions. Accepted accuracy is 85.70%, so the model-reported
-confidence score is a limited safeguard.
+predictions, of which 19 would be wrong. It captures 4.18% of the 455 errors;
+another 436 remain among the 3,049 accepted predictions. Accepted accuracy is
+85.70%, so the model-reported confidence score is a limited safeguard.
+
+The saved validation results show the workload trade-off: threshold 0.60 defers
+1.15% of validation rows with 85.06% accepted accuracy, while 0.95 defers 39.94%
+with 94.33% accepted accuracy. These are validation comparisons; the official
+test retained 0.60. See [`results/calibrated_threshold.json`](results/calibrated_threshold.json)
+and the report for the selection rule and its limitations.
 
 The ledger records 4,976 new API calls costing US$2.381836, including the initial
 cost probe. The historical pilot cost was not recorded. About 98% of input
@@ -125,11 +135,13 @@ Live calls from the browser have a separate US$1 local stop and ledger.
 | `submission/` | Report text, per-intent scores and error tables |
 | `tests/` | Offline software tests |
 
-The submission package includes the report in Word and PDF under `01_Report/`,
-the recorded demo and English captions under `02_Demo/`, and the original
-problem statement under `03_Problem_Statement/`. The report contains 1,175 words
-including headings, table and sources. AI use is described in
-[AI_ASSISTANCE.md](AI_ASSISTANCE.md).
+The submission ZIP contains `TicketRoute_Report.pdf`, `TicketRoute_Report.docx`,
+`TicketRoute_Final_Project_Zoom.mp4`, the original problem-statement PDF and
+`GitHub_Link.txt` beside the `TicketRoute/` project folder. The video includes
+English captions and presents the same completed evaluation used in the report.
+The word count, including headings, tables and sources, is recorded in
+[`submission/final_report_word_count.txt`](submission/final_report_word_count.txt).
+AI use is described in [AI_ASSISTANCE.md](AI_ASSISTANCE.md).
 
 The older files `results/llm_openai_gpt-5-mini_validation_100.json` and
 `results/cache_openai_gpt-5-mini_validation.jsonl` belong to the earlier v1
